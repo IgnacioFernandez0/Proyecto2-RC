@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="../js/navbar.js"></script>
+    <title>Log in </title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navBarNACHO">
+        <div class="container">
+           
+            <a class="navbar-brand" href="#">
+                <img src="../assets/pacmanNeonAzul.png" class="d-inline-block align-text-top imagenLogoNacho">
+            </a>
+            
+            <div class="navbar-nav navbar-brand me-auto">
+                <a class="nav-link text-white fw-medium" aria-current="page" href="#">
+                    Game Over
+                </a>
+            </div>
+          
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">              
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white fw-medium" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Tienda
+                        </a>
+                        <ul class="dropdown-menu bg-black">
+                            <li><a class="dropdown-item text-white fw-medium options" href="#">Destacados</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="#">Ofertas del dia</a></li>
+                            <li><hr class="dropdown-divider bg-primary"></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="#">Mas vendido</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="#">Mas Popular</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="#">Proximamente</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="#">Gratis</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white fw-medium" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Comunidad
+                        </a>
+                        <ul class="dropdown-menu bg-black">
+                            <li><a class="dropdown-item text-white fw-medium options" href="#">Sobre Nosotros</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="#">Foro</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="#">Discuciones</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="#">Transmisiones</a></li>
+                            <li><hr class="dropdown-divider bg-primary"></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="#">Facebook</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="#">Twitter</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="#">Twitch</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white fw-medium" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Soporte
+                        </a>
+                        <ul class="dropdown-menu bg-black">
+                            <li><a class="dropdown-item text-white fw-medium options" href="#">Problemas de juego</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="#">Ordenes y Pagos</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="#">Contactanos</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="#">Descargas</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item text-white" id="admin" style="display:none;"><a href="admin.html">Administrador</a></li>
+
+                    <li class="nav-item dropdown" id="userLog">
+                        <a class="nav-link dropdown-toggle text-white fw-medium" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="nombreUsuario">
+                            
+                        </a>
+                        <ul class="dropdown-menu bg-black">
+                            <li><a class="dropdown-item text-white fw-medium options" href="#">Mi cuenta</a></li>
+                            <li><hr class="dropdown-divider bg-primary"></li>
+                            <li><a class="dropdown-item text-white fw-medium options" id="logOut" href="#">Cerrar Sesion</a></li>
+                        </ul>
+                    </li>
+                
+                </ul>
+                <div class="navbar-brand">
+                    <img src="../assets/carroDeCompras.png" width="45" class="d-inline-block align-text-top ms-2" alt="">
+                </div>
+                <div class="d-flex" id="noUser">
+                    <div class="nav-item">
+                        <a class="nav-link text-white" aria-current="page" href="./inicioSesion.html">
+                            <button type="button" class="btnRegistro bg-transparent border-0 text-white">Iniciar Sesion</button>
+                        </a>
+                    </div>   
+                    <div class="nav-item>
+                        <a href="./Registro.html" class="nav-link" aria-current="page">
+                            <button type="button" class="btnRegistro bg-primary border-0 text-white d-none d-lg-block">Registrate en Game Over</button>
+                        </a>
+                    </div>                  
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container text-center mt-3">
+        <h1>Administrar Productos</h1>
+    </div>
+
+    <div class="container p-5">
+        <form onsubmit="nuevoJuego(event)">
+
+            <div class="row">
+                <div class="col-12">
+                    <button type="submit" class="btn btn-success">Agregar nuevo juego</button>  <!--Este boton estaria si uso un modal!!-->
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="codigo" class="form-label">Codigo</label>
+                <input type="number" class="form-control" id="codigo" name="name">
+            </div>
+
+            <div class="mb-3">
+                <label for="nombreJuego" class="form-label">Nombre de juego</label>
+                <input type="text" class="form-control" id="nombreJuego" name="name">
+            </div>
+
+            <div class="mb-3">
+                <label for="categoria" class="form-label">Categoria</label>
+                <input type="text" class="form-control" id="categoria" name="name">
+            </div>
+
+            <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripcion</label>
+                <input type="text" class="form-control" id="descripcion" name="email">
+            </div>
+
+            <div class="mb-3">
+                <label for="publicado" class="form-label">Publicado</label>
+                <input type="text" class="form-control" id="publicado" name="name">
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+
+        <hr>
+
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Codigo</th>
+                <th scope="col">Nombre de juego</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Publicado</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tablaJuegos">
+              
+            </tbody>
+          </table>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <footer class="pt-5">
+        <div class="container text-center text-md-start">
+
+            <div class="row text-center text-md-start">
+                <div class="col-xs-12 col-md-6 col-lg-3">
+                    <h6 class="text-uppercase mb-4 text-white">GAME OVER</h6>  
+                    <img src="../assets/pacmanNeonAzul.png" alt="Logo del blog" width="150px" height="auto" class="mb-3 mx-auto object-fit-contain w-50 mb-0 logoFooter">
+                </div>
+
+                <div class="col-xs-12 col-md-6 col-lg-3">
+                    <h6 class="text-uppercase mb-3 text-white">Informacion</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a class="text-secondary text-decoration-none" href="#">Foro</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-secondary text-decoration-none" href="#">Nosotros</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-secondary text-decoration-none" href="#">Buscar mas</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-secondary text-decoration-none" href="#">Comunidad</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-secondary text-decoration-none" href="#">Eventos</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-md-6 col-lg-3">
+                    <h6 class="text-uppercase mb-3 text-white">Ayuda</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a class="text-secondary text-decoration-none" href="#">Mi cuenta</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-secondary text-decoration-none" href="#">Servicios</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-secondary text-decoration-none" href="#">Soporte</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-secondary text-decoration-none" href="#">Terminos y Condiciones</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-secondary text-decoration-none" href="#">Politicas de Privacidad</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-md-6 col-lg-3">
+                    <h6 class="text-uppercase mb-3 text-white d-none d-sm-block">Contactenos</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="bi bi-telephone px-2 text-white"></i>
+                            <span class="text-secondary">+54 381-569-8105</span>
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-envelope px-2 text-white"></i>
+                            <span class="text-secondary">GameOver1234@gmail.com</span>
+                        </li>  
+                    </ul>
+                    <ul class="list-unstyled list-inline">
+                        <li class="list-inline-item fs-2">
+                            <a href="#">
+                                <i class="bi bi-facebook px-2 text-white"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item fs-2">
+                            <a href="#">
+                                <i class="bi bi-twitter px-2 text-white"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item fs-2">
+                            <a href="#">
+                                <i class="bi bi-twitch px-2 text-white"></i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 text-center text-white mt-4">
+                    <p>© GAMEOVER. Todos los derechos son reservados. Todas las marcas comerciales y marcas registradas son propiedad de sus respectivos dueños</p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="../js/admin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>

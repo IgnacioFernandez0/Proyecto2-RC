@@ -1,0 +1,281 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    background-image: url(/assets/wallpaper3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+   /* background-color:  #F0EBE3;*/
+}
+
+
+/*ACA ARRANCA EL NAV*/
+
+.navBarNACHO{
+    background-color: rgb(11, 11, 83);
+    opacity: 0.9;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.imagenLogoNacho{
+    border-radius: 10px;
+    width: 50px;
+    height: auto;
+}
+
+.InicioSesionNacho{
+    text-decoration: none;
+
+}
+
+.btnRegistro{
+    border-radius: 5px;
+    padding-inline: 1rem;
+    padding-block: 5px;
+}
+
+/*ACA TERMINA EL NAV*/
+
+
+
+/*AQUI ARRANCA EL FOOTER*/
+
+footer{
+    background-color: rgb(11, 11, 83);
+    opacity: 0.9;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.logoFooter{
+    border-radius: 70px;
+    width: 50px;
+    height: auto;
+}
+
+/*AQUI TERMINA EL FOOTER*/
+
+
+
+
+
+.Card{
+    background-color: #d1c6b5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-inline: 1rem;
+    padding-block: 2rem;
+    
+    
+    border-radius: 10px;
+    box-shadow: 6px 6px 16px -5px rgba(31,24,24,0.75);
+    color: rgb(71, 70, 70);
+}
+
+
+
+.Card h2{
+    font-size: 2rem;
+    font-weight: 400; 
+    margin-bottom: 1.3rem;   
+}
+.Card p{
+    font-size: 1rem;
+    text-align: center;
+}
+
+.rowForm{
+    width: 100%;
+}
+
+.formInput{
+    display: flex;
+    margin-bottom: 2rem;
+    flex-direction: column; /*Esto es como que me toma todo el renglon de la Card y pone el nobre del label arriba del renglon para escribir*/
+}
+
+.formInput label{
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 0.8rem;
+    color: rgb(100, 98, 98);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.formInput input{
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid rgb(233, 227, 227);
+    border-radius: 10px;
+    color: rgb(233, 227, 227);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.formInput input:focus{     
+    outline: 1px solid  rgb(233, 227, 227);
+    border-radius: 8px;
+    border: none;
+}
+
+.formInput input:focus-visible{    
+    outline: none;  
+    outline: 1px solid  rgb(233, 227, 227);
+    border: none;   
+    border-radius: 8px;
+}
+
+.submitButton{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-block: 0.3rem;
+}
+
+.submitButton button{
+    padding-block: 0.4rem;
+    padding-inline: 1.6rem;
+    border-radius: 10px;
+    background-color: #F0EBE3;
+    color: rgb(71, 70, 70);
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.submitButton button:hover{
+    cursor: pointer;
+    background-color: #b49e7c;
+    scale: 1.1;
+}
+
+.googleButton{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-block: 0.3rem;
+}
+
+.googleButton button{
+    padding-block: 0.4rem;
+    padding-inline: 1.6rem;
+    border-radius: 10px;
+    background-color: rgb(167, 157, 157);
+    color: rgb(71, 70, 70);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.googleButton button:hover{
+    cursor: pointer;
+    scale: 1.1;
+    transition: all 0.3s ease;
+}
+
+.facebookButton{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-block: 0.3rem;
+}
+
+.facebookButton button{
+    padding-block: 0.4rem;
+    padding-inline: 1.6rem;
+    border-radius: 10px;
+    color: rgb(71, 70, 70);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.facebookButton button:hover{
+    cursor: pointer;
+    scale: 1.1;
+    transition: all 0.3s ease;
+}
+
+.imagenContenedor{
+    width: 100%;
+    height: 100%;
+}
+
+.imagenContenedor img{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    border-radius: 15px;
+}
+
+@media (max-width: 576px) {
+    
+    .Card{
+        width: 90%;    
+    }  
+}
+
+@media (min-width: 576px) and (max-width: 776px) {
+    
+    .Card{
+        width: 80%;    
+    }
+}
+
+@media (min-width:776px) and (max-width: 992px){
+    .Card{
+        width: 80%;    
+    }
+}
+
+@media (min-width:992px) and (max-width: 1200px){
+    
+    .Card{
+        width: 70%;    
+    }
+
+    .imagenContenedor{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .imagenContenedor img{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100%;
+        border-radius: 15px;
+    }
+}
+
+@media (min-width:1200px){
+    .imagenContenedor{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .imagenContenedor img{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100%;
+        border-radius: 15px;
+    }
+}

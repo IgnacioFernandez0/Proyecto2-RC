@@ -1,0 +1,43 @@
+.navBarNACHO{
+    background-color: rgb(11, 11, 83);
+    opacity: 0.9;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.imagenLogoNacho{
+    border-radius: 10px;
+    width: 50px;
+    height: auto;
+}
+
+.options:hover{
+    background-color: rgb(11, 11, 83);
+}
+
+.buttonSearch{
+    width: 60px;
+    border: 2px solid rgb(0, 81, 128);
+    border-radius: 20px;
+}
+
+
+/*AQUI ARRANCA EL FOOTER*/
+
+footer{
+    background-color: rgb(11, 11, 83);
+    opacity: 0.9;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.logoFooter{
+    border-radius: 70px;
+    width: 50px;
+    height: auto;
+}
+
+/*AQUI TERMINA EL FOOTER*/
+

@@ -1,0 +1,608 @@
+
+
+.navBarNACHO{
+    background-color: rgb(11, 11, 83);
+    opacity: 0.9;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.imagenLogoNacho{
+    border-radius: 10px;
+    width: 50px;
+    height: auto;
+}
+
+.InicioSesionNacho{
+    text-decoration: none;
+
+}
+
+.btnRegistro{
+    border-radius: 5px;
+    padding-inline: 1rem;
+}
+
+.contenedor{
+    width: 100%;
+    position: relative;
+}
+
+
+.botonesRDR{
+    position: relative;
+}
+
+.botones{
+    position: relative;
+    top: 20px;
+}
+
+.btnIniciarSesion{
+    border-radius: 5px;
+}
+
+.btnRegistroGameOver{
+    border: none;
+    border-radius: 5px;
+}
+
+.contenidoFinal{
+    width: 100%;
+    position: absolute;
+    top: 50%;   
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.btnContactenosTW{
+    border-radius: 5px;
+    border: 1px solid white;
+    padding-inline: 3px;
+    padding-block: 2px;
+    font-size: small;
+    font-weight: 600;
+}
+.btnAcercaNosTW{
+    border-radius: 5px;
+    border: 1px solid white;
+    padding-inline: 4px;
+    padding-block: 4px;
+}
+
+/*contenedor de la parte Fortnite*/
+.contenedorNuevo{
+    width: 100%;
+    position: relative;
+}
+
+/*El scroll*/
+
+.media-scroller {
+    display: grid;
+    gap: 20px;
+    grid-auto-flow: column;
+    grid-auto-columns: 30%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    
+}
+  
+.elemento {
+    display: grid;
+    grid-template-rows: min-content;
+    gap: 5px;
+    background: transparent;
+}
+  
+.elemento img {
+    inline-size: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.snaps-inline {
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: 1rem;
+}
+  
+.snaps-inline > * {
+    scroll-snap-align: start;
+}
+  
+.contenedorScrollLateral{
+    position: absolute;
+    top: 50%;
+    background-color: rgba(11, 11, 83, 0.7);
+    padding-block: 1rem;
+}
+
+
+/*ESTA SECCION ME MODIFICA EL ESTILO DEL SCROLL*/
+
+::-webkit-scrollbar-thumb{
+    background-color: rgb(138, 138, 235);
+    border-radius: 10px;
+  
+}
+  
+::-webkit-scrollbar-track-piece{
+    background-color: transparent;
+  
+}
+::-webkit-scrollbar{
+    background-color: transparent;
+  
+}
+
+
+
+
+/*CONTENIDO FINAL*/
+
+
+
+.contenedorGodOfWar{
+    width: 100%;
+    position: relative;
+}
+
+.botonesGOW{
+    position: relative;
+    top: 8px;
+}
+
+
+
+/*AQUI ARRANCA EL FOOTER*/
+footer{
+    background-color: rgb(11, 11, 83);
+    opacity: 0.9;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.logoFooter{
+    border-radius: 70px;
+    width: 50px;
+    height: auto;
+}
+
+
+
+/*Los media query*/
+
+@media (max-width: 576px) {
+
+    /*DEL COMPONENTE RDR*/
+    .contenidoRDR{
+        position: absolute;
+        top: 15%;
+    }
+    .tituloRDR{
+        text-align: center;
+    }
+    .tituloRDR h1{
+        font-size: 15px;
+        font-weight: 700;
+    }
+    .tituloRDR p{
+        font-size: 10px;
+    }
+    .botonesRDR{
+        top: 3px;
+    }
+    .btnIniciarSesion{
+        border: 1px solid white;
+        padding-inline: 3px;
+        padding-block: 2px;
+        font-size: small;
+        font-weight: 600;
+    }
+    .btnRegistroGameOver{
+        padding-inline: 4px;
+        padding-block: 4px;
+        
+    }
+
+    /*DEL COMPONENTE THE WITCHER*/
+    .contenidoTheWitcher{
+        position: absolute;
+        top: 10%;
+    }
+
+
+    /*Del componente Fortnite*/
+
+    .contenedorContenido{
+        position: absolute;
+        top: 2%;
+    }
+
+    .tituloFortnite h1{
+        font-size: 1rem;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .tituloFortnite p{
+        font-size: 12px;
+        font-weight: 400;
+        text-align: center;
+    }
+
+
+    /*DEL COMPONENTE GOD OF WAR*/
+
+    .contenidoFinalGodOfWar{
+        position: absolute;
+        top: 2%;
+    }
+
+    .tituloGOW h1{
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    .tituloGOW p{
+        font-size: 10px;
+        font-weight: 400;
+    }
+
+    .btnIniciarSesionGOW{
+        width: 80%;
+        border-radius: 10px;
+        border: 1px solid white;
+        padding-block: 3px;
+        font-size: 12px;
+    }
+    
+    .btnRegistroGOW{
+        width: 80%;
+        border: none;
+        border-radius: 10px;
+        padding-block: 3px;
+        font-size: 12px;
+        position: relative;
+        top: 10px;
+    }
+
+    
+}
+
+@media (min-width: 576px) and (max-width: 776px) {
+    .contenidoRDR{
+        position: absolute;
+        top: 15%;
+        left: 15%;
+    }
+    .tituloRDR{
+        text-align: center;
+    }
+    .tituloRDR h1{
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .tituloRDR p{
+        font-size: small;
+    }
+    .botonesRDR{
+        top: 5px;
+    }
+    .btnIniciarSesion{
+        border: 2px solid white;
+        padding-inline: 1rem;
+        padding-block: 0.5rem;
+    }
+    .btnRegistroGameOver{
+        padding-inline: 1rem;
+        padding-block: 0.5rem;
+        font-weight: 600;
+    }
+
+    .contenidoTheWitcher{
+        position: absolute;
+        top: 15%;
+        right: 15%;
+    }
+
+
+
+    /*Del componente Fortnite*/
+    .contenedorContenido{
+        position: absolute;
+        top: 2%;
+    }
+
+    .tituloFortnite h1{
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .tituloFortnite p{
+        font-size: 16px;
+        font-weight: 400;
+        text-align: center;
+    }
+
+     /*DEL COMPONENTE GOD OF WAR*/
+    
+     .contenidoFinalGodOfWar{
+        position: absolute;
+        top: 5%;
+    }
+
+    .tituloGOW h1{
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .tituloGOW p{
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .btnIniciarSesionGOW{
+        width: 80%;
+        border-radius: 10px;
+        border: 1px solid white;
+        padding-block: 3px;
+        font-size: 12px;
+    }
+    
+    .btnRegistroGOW{
+        width: 80%;
+        border: none;
+        border-radius: 10px;
+        padding-block: 3px;
+        font-size: 12px;
+        position: relative;
+        top: 10px;
+    }
+   
+}
+
+@media (min-width:776px) and (max-width: 992px){
+    .contenidoRDR{
+        position: absolute;
+        top: 10%;
+        left: 50%;
+    }
+    .botonesRDR{
+        top: 10px;
+    }
+    .btnIniciarSesion{
+        border: 2px solid white;
+        padding-inline: 1rem;
+        padding-block: 0.5rem;
+    }
+    .btnRegistroGameOver{
+        padding-inline: 1rem;
+        padding-block: 0.5rem;
+        font-weight: 600;
+    }
+
+    .contenidoTheWitcher{
+        position: absolute;
+        top: 15%;
+        right: 50%;
+    }
+
+
+    /*Del componente Fortnite*/
+    .contenedorContenido{
+        position: absolute;
+        top: 9%;
+    }
+
+    .tituloFortnite h1{
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .tituloFortnite p{
+        font-size: 17px;
+        font-weight: 400;
+    }
+
+    /*DEL COMPONENTE GOD OF WAR*/
+
+    .contenidoFinalGodOfWar{
+        position: absolute;
+        top: 10%;
+    }
+
+    .tituloGOW h1{
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+
+    .tituloGOW p{
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    .btnIniciarSesionGOW{
+        width: 70%;
+        border-radius: 10px;
+        border: 1px solid white;
+        padding-block: 5px;
+    }
+    
+    .btnRegistroGOW{
+        width: 70%;
+        border: none;
+        border-radius: 10px;
+        padding-block: 5px;
+        position: relative;
+        top: 20px;
+    }
+
+
+
+}
+
+@media (min-width:992px) and (max-width: 1200px){
+    .contenidoRDR{
+        position: absolute;
+        top: 30%;
+        left: 50%;
+    }
+    .botonesRDR{
+        top: 20px;
+    }
+    .btnIniciarSesion{
+        border: 2px solid white;
+        padding-inline: 1rem;
+        padding-block: 0.5rem;
+    }
+    .btnRegistroGameOver{
+        padding-inline: 1rem;
+        padding-block: 0.5rem;
+        font-weight: 600;
+    }
+
+    .contenidoTheWitcher{
+        position: absolute;
+        top: 30%;
+        right: 50%;
+    }
+
+
+    /*Del componente Fortnite*/
+    .contenedorContenido{
+        position: absolute;
+        top: 10%;
+    }
+
+    .tituloFortnite h1{
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .tituloFortnite p{
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+
+    /*DEL COMPONENTE GOD OF WAR*/
+
+    .contenidoFinalGodOfWar{
+        position: absolute;
+        top: 20%;
+    }
+
+    .tituloGOW h1{
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    .tituloGOW p{
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .btnIniciarSesionGOW{
+        width: 50%;
+        border-radius: 10px;
+        border: 1px solid white;
+        padding-block: 5px;
+    }
+    
+    .btnRegistroGOW{
+        width: 50%;
+        border: none;
+        border-radius: 10px;
+        padding-block: 5px;
+        position: relative;
+        top: 20px;
+    }
+
+
+}
+
+@media (min-width:1200px){
+    .contenidoRDR{
+        position: absolute;
+        top: 30%;
+        left: 50%;
+    }
+    .botonesRDR{
+        top: 20px;
+    }
+    .btnIniciarSesion{
+        border: 2px solid white;
+        padding-inline: 1rem;
+        padding-block: 0.5rem;
+    }
+    .btnRegistroGameOver{
+        padding-inline: 1rem;
+        padding-block: 0.5rem;
+        font-weight: 600;
+    }
+
+    .contenidoTheWitcher{
+        position: absolute;
+        top: 30%;
+        right: 50%;
+    }
+
+
+    /*Del componente Fortnite*/
+    .contenedorContenido{
+        position: absolute;
+        top: 10%;
+    }
+
+    .tituloFortnite h1{
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    .tituloFortnite p{
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+
+     /*DEL COMPONENTE GOD OF WAR*/
+
+     .contenidoFinalGodOfWar{
+        position: absolute;
+        top: 20%;
+    }
+
+    .tituloGOW h1{
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    .tituloGOW p{
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .btnIniciarSesionGOW{
+        width: 50%;
+        border-radius: 10px;
+        border: 1px solid white;
+        padding-block: 5px;
+    }
+    
+    .btnRegistroGOW{
+        width: 50%;
+        border: none;
+        border-radius: 10px;
+        padding-block: 5px;
+        position: relative;
+        top: 20px;
+    }
+}
