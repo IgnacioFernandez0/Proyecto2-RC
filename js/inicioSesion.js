@@ -1,3 +1,9 @@
+const userLogueado = localStorage.getItem("token");
+if(userLogueado){
+    window.location.href="index.html"
+}
+
+
 function loginFormulario(e){
     e.preventDefault(); 
 
