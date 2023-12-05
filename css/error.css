@@ -1,0 +1,28 @@
+.error{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: url(../assets/gif1.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.error h5{
+    position: absolute;
+    top: 3rem;
+    font-size: 2rem;
+    color: black;
+}
+.error a{
+    position: absolute;
+    bottom: 1rem;
+    background: linear-gradient(45deg, #ffae00, #cc9c18);
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 23px;
+    border-radius: 13px;
+}
