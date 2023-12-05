@@ -61,16 +61,14 @@
 .btnContactenosTW{
     border-radius: 5px;
     border: 1px solid white;
-    padding-inline: 3px;
-    padding-block: 2px;
-    font-size: small;
     font-weight: 600;
 }
+
+
 .btnAcercaNosTW{
     border-radius: 5px;
     border: 1px solid white;
-    padding-inline: 4px;
-    padding-block: 4px;
+    font-size: 600;
 }
 
 /*contenedor de la parte Fortnite*/
@@ -96,6 +94,8 @@
     grid-template-rows: min-content;
     gap: 5px;
     background: transparent;
+    position: relative;
+    padding-bottom: 1rem;
 }
   
 .elemento img {
@@ -103,6 +103,29 @@
     aspect-ratio: 16 / 9;
     object-fit: cover;
     border-radius: 10px;
+
+    transition: opacity 0.3s ease;
+}
+
+.elemento img:hover{
+    opacity: 0.5;
+}
+
+
+.elemento:hover .texto-superpuesto {
+    opacity: 1;
+}
+
+.texto-superpuesto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; 
+    font-size: 30px; 
+    font-weight: 700;
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
 }
 
 .snaps-inline {
@@ -120,7 +143,7 @@
     background-color: rgba(11, 11, 83, 0.7);
     padding-block: 1rem;
 }
-
+  
 
 /*ESTA SECCION ME MODIFICA EL ESTILO DEL SCROLL*/
 
@@ -196,24 +219,53 @@ footer{
     }
     .botonesRDR{
         top: 3px;
+        gap: 20px;
     }
     .btnIniciarSesion{
         border: 1px solid white;
-        padding-inline: 3px;
-        padding-block: 2px;
+        padding-inline: 4px;
+        padding-block: 4px;
         font-size: small;
         font-weight: 600;
     }
     .btnRegistroGameOver{
         padding-inline: 4px;
         padding-block: 4px;
-        
+        font-size: small;
     }
+    
 
     /*DEL COMPONENTE THE WITCHER*/
     .contenidoTheWitcher{
         position: absolute;
         top: 10%;
+    }
+    .tituloTW{
+        text-align: center;
+    }
+    .tituloTW h1{
+        font-size: 15px;
+        font-weight: 700;
+    }
+    .tituloTW p{
+        font-size: 10px;
+    }
+
+    .botonesTW{
+        top: 3px;
+        gap: 20px;
+    }
+
+    .btnContactenosTW{
+        padding-inline: 4px;
+        padding-block: 4px;
+        font-size: small;
+    }
+    
+    .btnAcercaNosTW{
+        padding-inline: 4px;
+        padding-block: 4px;
+        font-size: small;
     }
 
 
@@ -292,23 +344,58 @@ footer{
         font-size: small;
     }
     .botonesRDR{
-        top: 5px;
+        top: 3px;
+        gap: 30px;
     }
     .btnIniciarSesion{
-        border: 2px solid white;
-        padding-inline: 1rem;
-        padding-block: 0.5rem;
-    }
-    .btnRegistroGameOver{
-        padding-inline: 1rem;
-        padding-block: 0.5rem;
+        border: 1px solid white;
+        padding-inline: 5px;
+        padding-block: 6px;
+        font-size: small;
         font-weight: 600;
     }
+    .btnRegistroGameOver{
+        padding-inline: 5px;
+        padding-block: 6px;
+        font-size: small;
+        font-weight: 600;
+    }
+
+
+
 
     .contenidoTheWitcher{
         position: absolute;
         top: 15%;
         right: 15%;
+    }
+
+    .tituloTW{
+        text-align: center;
+    }
+    .tituloTW h1{
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .tituloTW p{
+        font-size: small;
+    }
+
+    .botonesTW{
+        top: 3px;
+        gap: 30px;
+    }
+
+    .btnContactenosTW{
+        padding-inline: 5px;
+        padding-block: 6px;
+        font-size: small;
+    }
+    
+    .btnAcercaNosTW{
+        padding-inline: 5px;
+        padding-block: 6px;
+        font-size: small;
     }
 
 
@@ -371,28 +458,76 @@ footer{
 @media (min-width:776px) and (max-width: 992px){
     .contenidoRDR{
         position: absolute;
-        top: 10%;
+        top: 15%;
         left: 50%;
     }
+
+    .tituloRDR{
+        text-align: center;
+    }
+    .tituloRDR h1{
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .tituloRDR p{
+        font-size: small;
+    }
+
     .botonesRDR{
-        top: 10px;
+        top: 3px;
+        gap: 30px;
     }
     .btnIniciarSesion{
-        border: 2px solid white;
-        padding-inline: 1rem;
-        padding-block: 0.5rem;
-    }
-    .btnRegistroGameOver{
-        padding-inline: 1rem;
-        padding-block: 0.5rem;
+        border: 1px solid white;
+        padding-inline: 5px;
+        padding-block: 6px;
+        font-size: medium;
         font-weight: 600;
     }
+    .btnRegistroGameOver{
+        padding-inline: 5px;
+        padding-block: 6px;
+        font-size: medium;
+        font-weight: 600;
+    }
+
+
 
     .contenidoTheWitcher{
         position: absolute;
         top: 15%;
         right: 50%;
     }
+
+    .tituloTW{
+        text-align: center;
+    }
+    .tituloTW h1{
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .tituloTW p{
+        font-size: small;
+    }
+
+    .botonesTW{
+        top: 3px;
+        gap: 30px;
+    }
+
+    .btnContactenosTW{
+        padding-inline: 5px;
+        padding-block: 6px;
+        font-size: medium;
+    }
+    
+    .btnAcercaNosTW{
+        padding-inline: 5px;
+        padding-block: 6px;
+        font-size: medium;
+    }
+
+
 
 
     /*Del componente Fortnite*/
@@ -452,27 +587,73 @@ footer{
 @media (min-width:992px) and (max-width: 1200px){
     .contenidoRDR{
         position: absolute;
-        top: 30%;
+        top: 20%;
         left: 50%;
     }
+
+    .tituloRDR{
+        text-align: center;
+    }
+    .tituloRDR h1{
+        font-size: 35px;
+        font-weight: 700;
+    }
+    .tituloRDR p{
+        font-size: 20px;
+    }
+
     .botonesRDR{
-        top: 20px;
+        top: 3px;
+        gap: 40px;
     }
     .btnIniciarSesion{
-        border: 2px solid white;
-        padding-inline: 1rem;
-        padding-block: 0.5rem;
+        border: 1px solid white;
+        padding-inline: 10px;
+        padding-block: 8px;
+        font-size: medium;
+        font-weight: 600;
     }
     .btnRegistroGameOver{
-        padding-inline: 1rem;
-        padding-block: 0.5rem;
+        padding-inline: 10px;
+        padding-block: 8px;
+        font-size: medium;
         font-weight: 600;
     }
 
+
+
     .contenidoTheWitcher{
         position: absolute;
-        top: 30%;
+        top: 20%;
         right: 50%;
+    }
+
+    .tituloTW{
+        text-align: center;
+    }
+    .tituloTW h1{
+        font-size: 35px;
+        font-weight: 700;
+    }
+    .tituloTW p{
+        font-size: 20px;
+    }
+
+    .botonesTW{
+        top: 3px;
+        gap: 40px;
+    }
+
+    .btnContactenosTW{
+        padding-inline: 10px;
+        padding-block: 8px;
+        font-size: medium;
+    }
+    
+    .btnAcercaNosTW{
+        padding-inline: 10px;
+        padding-block: 8px;
+        font-size: medium;
     }
 
 
@@ -532,27 +713,73 @@ footer{
 @media (min-width:1200px){
     .contenidoRDR{
         position: absolute;
-        top: 30%;
+        top: 20%;
         left: 50%;
     }
+
+    .tituloRDR{
+        text-align: center;
+    }
+    .tituloRDR h1{
+        font-size: 35px;
+        font-weight: 700;
+    }
+    .tituloRDR p{
+        font-size: 20px;
+    }
+    
     .botonesRDR{
-        top: 20px;
+        top: 3px;
+        gap: 40px;
     }
     .btnIniciarSesion{
-        border: 2px solid white;
-        padding-inline: 1rem;
-        padding-block: 0.5rem;
-    }
-    .btnRegistroGameOver{
-        padding-inline: 1rem;
-        padding-block: 0.5rem;
+        border: 1px solid white;
+        padding-inline: 18px;
+        padding-block: 10px;
+        font-size: medium;
         font-weight: 600;
     }
+    .btnRegistroGameOver{
+        padding-inline: 18px;
+        padding-block: 10px;
+        font-size: medium;
+        font-weight: 600;
+    }
+
 
     .contenidoTheWitcher{
         position: absolute;
         top: 30%;
         right: 50%;
+    }
+
+
+    .tituloTW{
+        text-align: center;
+    }
+    .tituloTW h1{
+        font-size: 35px;
+        font-weight: 700;
+    }
+    .tituloTW p{
+        font-size: 20px;
+    }
+
+    .botonesTW{
+        top: 3px;
+        gap: 40px;
+    }
+
+    .btnContactenosTW{
+        padding-inline: 10px;
+        padding-block: 8px;
+        font-size: medium;
+    }
+    
+    .btnAcercaNosTW{
+        padding-inline: 10px;
+        padding-block: 8px;
+        font-size: medium;
     }
 
 
