@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    background: linear-gradient(90deg, black 0%, rgb(29, 29, 32) 100%);
+    background-image: url('../assets/backContact.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+.contactanos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    padding: 10px;
+    background-color: transparent;
+}
+
+.contactanos H3{
+    color: #243A73;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.input{
+    border-radius: 1rem;
+}
+
+.mapaEmpresa{
+    padding: 0;
+    align-items: center;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.navBarNACHO{
+    background-color: rgb(11, 11, 83);
+    opacity: 0.9;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+footer{
+    background-color: rgb(11, 11, 83);
+    opacity: 0.9;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.logoFooter{
+    border-radius: 70px;
+    width: 50px;
+    height: auto;
+}
+
+.options:hover{
+    background-color: rgb(11, 11, 83);
+}
+
+.imagenLogoNacho{
+    border-radius: 10px;
+    width: 50px;
+    height: auto;
+}
+
+.contenedor{
+    width: 100%;
+    position: relative;
+}
+
+.btnRegistro{
+    border-radius: 5px;
+    padding-inline: 1rem;
+}
+
+
+@media (max-width: 991px){
+    .contenedor{
+        justify-content: center;
+    }
+    .contactanos{
+        width: 90%;
+        justify-content: center;
+        display: flex;
+        padding: 0px;
+        margin-left: 0;
+    }
+
+    .mapaEmpresa{
+        padding: 0;
+    }
+
+}
+
+
+
