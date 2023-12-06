@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/ec0c4b2b27.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../css/detalle.css">
+  <title>Detalle Producto</title>
+</head>
+<body>  
+    <nav class="navbar navbar-expand-lg navBarNACHO">
+        <div class="container">
+           
+            <a class="navbar-brand" href="#">
+                <img src="../assets/pacmanNeonAzul.png" class="d-inline-block align-text-top imagenLogoNacho">
+            </a>
+            
+            <div class="navbar-nav navbar-brand me-auto">
+                <a class="nav-link text-white fw-medium" aria-current="page" href="#">
+                    Game Over
+                </a>
+            </div>
+          
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">              
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white fw-medium" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Tienda
+                        </a>
+                        <ul class="dropdown-menu bg-black">
+                            <li><a class="dropdown-item text-white fw-medium options" href="../html/error404.html">Destacados</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="../html/error404.html">Ofertas del dia</a></li>
+                            <li><hr class="dropdown-divider bg-primary"></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="../html/error404.html">Mas vendido</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="../html/error404.html">Mas Popular</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="../html/error404.html">Proximamente</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="../html/error404.html">Gratis</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white fw-medium" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Comunidad
+                        </a>
+                        <ul class="dropdown-menu bg-black">
+                            <li><a class="dropdown-item text-white fw-medium options" href="../html/acerca.html">Sobre Nosotros</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="../html/error404.html">Foro</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="../html/error404.html">Discuciones</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="../html/error404.html">Transmisiones</a></li>
+                            <li><hr class="dropdown-divider bg-primary"></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="../html/error404.html">Facebook</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="../html/error404.html">Twitter</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="../html/error404.html">Twitch</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white fw-medium" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Soporte
+                        </a>
+                        <ul class="dropdown-menu bg-black">
+                            <li><a class="dropdown-item text-white fw-medium options" href="../html/error404.html">Problemas de juego</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="../html/error404.html">Ordenes y Pagos</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="../html/contacto.html">Contactanos</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="../html/error404.html">Descargas</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item text-white" id="admin" style="display:none;">
+                        <a class="nav-link text-white fw-medium" href="../html/admin.html">
+                            Administrador
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown" id="userLog">
+                        <a class="nav-link dropdown-toggle text-white fw-medium" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="nombreUsuario">
+                            
+                        </a>
+                        <ul class="dropdown-menu bg-black">
+                            <li><a class="dropdown-item text-white fw-medium options" href="#">Mi cuenta</a></li>
+                            <li><hr class="dropdown-divider bg-primary"></li>
+                            <li><a class="dropdown-item text-white fw-medium options" id="logOut" href="#">Cerrar Sesion</a></li>
+                        </ul>
+                    </li>
+                
+                </ul>
+                <div class="navbar-brand">
+                    <img src="../assets/carroDeCompras.png" width="45px" class="d-inline-block align-text-top ms-2" alt="">
+                </div>
+                <div class="d-flex" id="noUser">
+                    <div class="nav-item">
+                        <a class="nav-link text-white" aria-current="page" href="../html/inicioSesion.html">
+                            <button type="button" class="btnRegistro bg-transparent border-0 text-white">Iniciar Sesion</button>
+                        </a>
+                    </div>   
+                    <div class="nav-item">
+                        <a href="../html/Registro.html" class="nav-link" aria-current="page">
+                            <button type="button" class="btnRegistro bg-primary border-0 text-white d-none d-lg-block">Registrate en Game Over</button>
+                        </a>
+                    </div>                  
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container my-5 comprasDesarrollo">
+        <div class="row position-relative g-3">
+            <div class="col-md-12 col-lg-7 contenedorProducto d-flex justify-content-center">
+                <div class=" col w-100">
+                    <div id="carouselExampleIndicators" class="carousel slide carousel-fade shadow-2-strong">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active text-bg-dark" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="text-bg-dark" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="text-bg-dark"aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" class="text-bg-dark "aria-label="Slide 4"></button>
+                        </div>
+                        <div class="carousel-inner bg-white">
+                            <div class="carousel-item active  justify-content-center align-items-center">
+                                <img src="https://sm.ign.com/t/ign_latam/screenshot/default/eivor_zm9y.1280.jpg" class="w-100 d-block" alt="assasins"> 
+                            </div>
+                            <div class="carousel-item ">
+                                <img src="https://cdn.akamai.steamstatic.com/steam/apps/2208920/ss_103481084a59b34837113daf27c04679caf743f3.1920x1080.jpg?t=1697654233" class="d-block w-100" alt="Vista interna de los componentes de PC Ryzen AMD dual core 8GB">
+                            </div>
+                            <div class="carousel-item ">
+                                <img src="https://cdn.akamai.steamstatic.com/steam/apps/2208920/ss_e7310b36689ec722d2ea4643efc15bd8fa720c67.1920x1080.jpg?t=1697654233" class="d-block w-100" alt="Ryzen">
+                            </div>
+                            <div class="carousel-item ">
+                                <img src="https://cdn.akamai.steamstatic.com/steam/apps/2208920/ss_c3bff917ead50268eb7708ef3bf30e07b58929e9.1920x1080.jpg?t=1697654233" class="d-block w-100" alt="Componentes internos Ryzen">
+                            </div>
+                            <div class="carousel-item container text-center">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/VVX7DRyjE60?si=CMRxJ5z3bXdwPZgx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+                            </div>
+                        </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                <div class="bg-dark text-bg-primary rounded-5 p-2">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </div>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                <div class="bg-dark text-bg-primary rounded-5 p-2">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </div>
+                            </button>
+                    </div>
+                    <div class="divisiondetalle"></div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 text center">
+                            <h2 class="descripcionTitulo fs-2 mt-3 text-center">Descripción del Producto</h2>
+                            <p class="descripcionTitulo mt-3 text-primary fw-bold">¿QUÉ ES ASSASSIN'S CREED VALHALLA?</p>
+                            <h4>Saquea a tus enemigos, desarrolla tu asentamiento y aumenta tu poder político en el próximo capítulo de la serie de Asassin’s Creed.</h4>
+                            <br>
+                            <p class="fw-light fs-6">Etiquetas populares para este producto:</p>
+                            <a href="#" class=" etiqueta" tabindex="-1" role="button" aria-disabled="true">Acción</a>
+                            <a href="#" class=" etiqueta" tabindex="-1" role="button" aria-disabled="true">Mundo Abierto</a>
+                            <a href="#" class=" etiqueta" tabindex="-1" role="button" aria-disabled="true">Rol</a>
+                            <a href="#" class=" etiqueta" tabindex="-1" role="button" aria-disabled="true">Aventura</a>
+                            <a href="#" class=" etiqueta" tabindex="-1" role="button" aria-disabled="true">Vikingos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-5">
+                <div class="detalle">
+                    <div class="tiempo mb-3 p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+                        <span>Nuevo</span>
+                        <span>+ de 1000 vendidos</span>
+                    </div>
+                    <div class="d-flex">
+                        <span class="caracteristicaProducto fs-2">Assassin's Creed Valhalla</span>
+                    </div>
+                    <div class="divisiondetalle "></div>
+                    <div class="detallePrecio">
+                        <span class="precioReal display-6 text-primary-emphasis "> US$59.99</span>
+                    </div>
+                    <div class="divisiondetalle"> </div>
+                    <div class="total mt-5">
+                        <span class="totalProductos fs-2 text-primary-emphasis">Total de mis productos:</span>
+                        <span class="precioFinal fs-3 ms-1">US$59.99</span>
+                    </div>
+                    <div>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#miModal">Ver métodos de Pago</a>
+                        <div class="modal fade" id="miModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Medios de Pago para este producto</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div>
+                                            <p>Podés pagar tus compras con cualquiera de estos medios. Es rápido y seguro, siempre.</p>
+                                            <br>
+                                        </div>                 
+                                        <h5>Tarjetas de Crédito y Débito</h5>
+                                        <p>Acreditación instantánea </p>
+                                        <img decoding="async" src="https://http2.mlstatic.com/storage/logos-api-admin/a5f047d0-9be0-11ec-aad4-c3381f368aaf-m.svg" class="ui-pdp-image ui-pdp-payment-icon" alt="Visa">
+                                        <img decoding="async" src="https://http2.mlstatic.com/storage/logos-api-admin/aa2b8f70-5c85-11ec-ae75-df2bef173be2-m.svg" class="ui-pdp-image ui-pdp-payment-icon" alt="Mastercard">
+                                        <img decoding="async" src="https://http2.mlstatic.com/storage/logos-api-admin/cb0af1c0-f3be-11eb-8e0d-6f4af49bf82e-m.svg" class="ui-pdp-image ui-pdp-payment-icon" alt="Cabal Débito">
+                                        <img decoding="async" src="https://http2.mlstatic.com/storage/logos-api-admin/fbf867c0-9108-11ed-87b1-fd4dd99fac51-m.svg" class="ui-pdp-image ui-pdp-payment-icon" alt="American Express">
+                                        <hr>
+                                        <h5>Dinero disponible en Mercado Pago</h5>
+                                        <p>Te redireccionaremos a la página para realizar el pago.</p>
+                                        <img decoding="async" src="https://http2.mlstatic.com/storage/logos-api-admin/b4534650-571b-11e8-95d8-631c1a9a92a9-m.svg" class="ui-pdp-image ui-pdp-payment-icon" alt="Dinero disponible en Mercado Pago">
+                                        <hr>
+                                        <h5>Pago en Efectivo</h5>
+                                        <p>Acreditación en un 1 hábil.</p>
+                                        <img decoding="async" src="https://http2.mlstatic.com/storage/logos-api-admin/fec5f230-06ee-11ea-8e1e-273366cc763d-m.svg" class="ui-pdp-image ui-pdp-payment-icon" alt="PagoFacil">
+                                        <img decoding="async" src="https://http2.mlstatic.com/storage/logos-api-admin/443c34d0-571b-11e8-823a-758d95db88db-m.svg" class="ui-pdp-image ui-pdp-payment-icon" alt="Rapipago">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary etiqueta" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>          
+                        </div>
+                    </div>
+                    <div class="realizarCompra d-grid mt-5">
+                        <a class="btn mt-4 mb-3 btn btn-primary" href="../html/error404.html" role="button">Continuar compra</a>
+                    </div>
+                </div>
+                <div class="clasificacion mt-2 detalle container d-flex">
+                    <img src="https://store.akamai.steamstatic.com/public/shared/images/game_ratings/ESRB/m.png" class="p-3">
+                    <ul class="list-unstyled">    
+                        <li class="ms-3 mt-1">SANGRE Y GORE</li>
+                        <li class="ms-3 mt-2">VIOLENCIA INTENSA</li>
+                        <li class="ms-3 mt-2">DESNUDEZ PARCIAL</li>
+                        <li class="ms-3 mt-2">TEMAS SEXUALES</li>
+                        <li class="ms-3 mt-2">LENGUAJE FUERTE</li>
+                    </ul>
+                </div>
+            </div>
+        </div>  
+    </div>
+
+
+    <div class=" container row ms-5 ">
+    <div class="d-flex col-lg-9">
+        <div class="container ms-2 mt-2 mb-5">
+            <div id="myCarouselb" class="carousel slide" data-bs-ride="carousel">
+                <div class="interes ">
+                    <h3 class="px-5 mb-3">También podría interesarte</h3>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row justify-content-between">
+                            <div class="col-2 col-md-3">
+                                <div class="card">
+                                    <a href="#">
+                                        <img src="../assets/assasins2.jpeg" class="object-fit-contain" alt="Asassin’s 2">
+                                    </a>
+                                    <div class="linea"></div>
+                                    <h6>Assassin's Creed® Mirage</h6>
+                                    <a class="btn mt-4 mb-3 ofertaBoton" href="../html/error404.html" role="button">Ver oferta</a>
+                                </div>
+                            </div>
+                            <div class="col-2 col-md-3">
+                                    <div class="card">
+                                        <a href="#">
+                                            <img src="../assets/assasins3.jpeg" class="object-fit-contain" alt="Asassin’s 3">
+                                        </a>
+                                        <div class="linea"></div>
+                                        <h6>Asassin’s Creed® Brotherhood</h6>
+                                        <a class="btn mt-4 mb-3 ofertaBoton" href="../html/error404.html" role="button">Ver oferta</a>
+                                    </div>
+                            </div>
+                            <div class="col-2 col-md-3">
+                                <div class="card">
+                                    <a href="#">    
+                                        <img src="https://cdn.k4g.com/files/media/cache/cover_270/cover/5ee3d85c18b206158f700cdd6940208b.jpg" class="object-fit-contain" alt="FIFA 24">
+                                    </a>
+                                    <div class="linea"></div>
+                                    <h6>FIFA 24® - EA SPORTS</h6>
+                                    <a class="btn mt-4 mb-3 ofertaBoton" href="../html/error404.html" role="button">Ver oferta</a>
+                                </div>
+                            </div>
+                            <div class="col-2 col-md-3">
+                                <div class="card">
+                                    <a href="#">
+                                        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202305/3114/0338cca6e5031ecf3f83a04b7014e4428bd639a5076df71b.jpg" class="object-fit-contain" alt="Monitor Philips Pc De 27">
+                                    </a>
+                                    <div class="linea"></div>
+                                    <h6>PAYDAY 3: Silver Edition</h6>
+                                    <a class="btn mt-4 mb-3 ofertaBoton" href="../html/error404.html" role="button">Ver oferta</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-between">
+                            <div class="col-2 col-md-3">
+                                <div class="card">
+                                    <a href="#">
+                                        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202212/0522/Dzry5RAwU9HsJGXZ3PUSYgCa.jpg" class="object-fit-contain" alt="Intel Dual Core 8gb Led 22">
+                                    </a>
+                                    <div class="linea"></div>
+                                    <h6>Diablo® IV</h6>
+                                    <a class="btn mt-4 mb-3 ofertaBoton" href="../html/error404.html" role="button">Ver oferta</a>
+                                </div>
+                            </div>
+                            <div class="col-2 col-md-3">
+                                <div class="card">
+                                    <a href="#">
+                                        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202307/2809/03f24f06573f21a2b3b5279b26205b0f882acf8a31d5dabd.png" class="object-fit-contain" alt="Samsung Galaxy S23 128gb">
+                                    </a>
+                                    <div class="linea"></div>
+                                    <h6>NBA 2K24® - EA SPORTS</h6>
+                                    <a class="btn mt-3 mb-2 ofertaBoton" href="../html/error404.html" role="button">Ver oferta</a>
+                                </div>
+                            </div>
+                            <div class="col-2 col-md-3">
+                                <div class="card">
+                                    <a href="#">
+                                        <img src="https://upload.wikimedia.org/wikipedia/en/b/b0/Madden_NFL_24_Cover.jpeg" class="object-fit-contain" alt="MADDEN24">
+                                    </a>
+                                    <div class="linea"></div>
+                                    <h6>Madden NFL 24® - EA SPORTS</h6>
+                                    <a class="btn mt-3 mb-2 ofertaBoton" href="../html/error404.html" role="button">Ver oferta</a>
+                                </div>
+                            </div>
+                            <div class="col-2 col-md-3">
+                                <div class="card">
+                                    <a href="#">
+                                        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202310/2310/ecdcde51e224725ab2769dc9c79350d5dbd6bca523baa8c2.png" class="object-fit-contain" alt="WRC">
+                                    </a>
+                                    <div class="linea"></div>
+                                    <h6>EA SPORTS™ WRC</h6>
+                                    <a class="btn mt-4 mb-3 ofertaBoton" href="../html/error404.html" role="button">Ver oferta</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="container mt-4">
+            <h2>Deja un comentario</h2>
+            <form id="commentForm">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Usuario:</label>
+                    <input type="text" class="form-control" id="username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="comment" class="form-label">Comentario:</label>
+                    <textarea class="form-control" id="comment" rows="3" required></textarea>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="guardarComentario()">Enviar Comentario</button>
+            </form>
+                <div class="mt-4 mb-4">
+                    <h2>Comentarios Recientes</h2>
+                    <ul id="commentList"></ul>
+                </div>
+    </div>
+    
+    <footer class="pt-5 mt-5">
+        <div class="container text-center text-md-start">
+
+            <div class="row text-center text-md-start">
+                <div class="col-xs-12 col-md-6 col-lg-3">
+                    <h6 class="text-uppercase ms-4 mb-4 text-white">GAME OVER</h6>  
+                    <img src="../assets/pacmanNeonAzul.png" alt="Logo del blog" width="150px" height="auto" class="mb-3 mx-auto object-fit-contain w-50 mb-0 logoFooter">
+                </div>
+
+                <div class="col-xs-12 col-md-6 col-lg-3">
+                    <h6 class="text-uppercase mb-3 text-white">Informacion</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a class="text-secondary text-decoration-none" href="../html/error404.html">Foro</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-secondary text-decoration-none" href="../html/acerca.html">Nosotros</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-secondary text-decoration-none" href="../html/error404.html">Buscar mas</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-secondary text-decoration-none" href="../html/error404.html">Comunidad</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-secondary text-decoration-none" href="../html/error404.html">Eventos</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-md-6 col-lg-3">
+                    <h6 class="text-uppercase mb-3 text-white">Ayuda</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a class="text-secondary text-decoration-none" href="../html/error404.html">Mi cuenta</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-secondary text-decoration-none" href="../html/error404.html">Servicios</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-secondary text-decoration-none" href="../html/error404.html">Soporte</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-secondary text-decoration-none" href="../html/error404.html">Terminos y Condiciones</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-secondary text-decoration-none" href="../html/error404.html">Politicas de Privacidad</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-md-6 col-lg-3">
+                    <h6 class="text-uppercase mb-3 text-white d-none d-sm-block">Contactenos</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a class="text-secondary text-decoration-none" href="../html/contacto.html">Contacto</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-envelope px-2 text-white"></i>
+                            <span class="text-secondary">GameOver1234@gmail.com</span>
+                        </li>  
+                    </ul>
+                    <ul class="list-unstyled list-inline">
+                        <li class="list-inline-item fs-2">
+                            <a href="#">
+                                <i class="bi bi-facebook px-2 text-white"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item fs-2">
+                            <a href="#">
+                                <i class="bi bi-twitter px-2 text-white"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item fs-2">
+                            <a href="#">
+                                <i class="bi bi-twitch px-2 text-white"></i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 text-center text-white mt-4">
+                    <p>© GAMEOVER. Todos los derechos son reservados. Todas las marcas comerciales y marcas registradas son propiedad de sus respectivos dueños</p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="../js/comentario.js"></script>
+    <script src="../js/navbar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
