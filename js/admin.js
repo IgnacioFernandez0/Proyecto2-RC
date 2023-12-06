@@ -1,8 +1,8 @@
 let juegos = [];
 
 
-function nuevoJuego(event){
-    event.preventDefault(); 
+function nuevoJuego(){
+     
     const codigo = document.getElementById("codigo");
     const nombreJuego = document.getElementById("nombreJuego").value;
     const categoria = document.getElementById("categoria").value;
@@ -21,6 +21,17 @@ function nuevoJuego(event){
 
     if (isNaN(codigo.value) || codigo.value < 0) {
         alert("El codigo debe ser un numero positivo");
+        return false;
+    }
+
+
+    if(nombreJuego ==""){
+        alert("Se requiere ingresar el Nombre del juego");
+        return false;
+    }
+
+    if(descripcion ==""){
+        alert("Se requiere ingresar alguna descripcion del juego");
         return false;
     }
 
@@ -69,6 +80,65 @@ function borrarJuego(codigo) {
     cargarLS();
 }
 
+
+function modificarJuegoBoton(codigo){
+    const juegos = JSON.parse(localStorage.getItem("listaJuegos"));
+    const codigoJuego = document.getElementById("codigo");
+    codigoJuego.readOnly = true;
+    const nombreJuego = document.getElementById("nombreJuego");
+    const categoria = document.getElementById("categoria");
+    const descripcion = document.getElementById("descripcion");
+    const botonCancelar = document.getElementById("botonCancelar");
+    const submitModificar = document.getElementById("submitModificar");
+    const submitJuego = document.getElementById("submitJuego");
+
+    const index = juegos.findIndex((c) => c.codigo == codigo);
+    if (index !== -1) {
+        codigoJuego.value = juegos[index].codigo;
+        nombreJuego.value = juegos[index].nombreJuego;
+        categoria.value = juegos[index].categoria;
+        descripcion.value = juegos[index].descripcion;
+        botonCancelar.style.display = "flex";
+        submitModificar.style.display ="flex";
+        submitJuego.style.display ="none";
+    }
+}
+
+function modificarJuego(){
+    const juegos = JSON.parse(localStorage.getItem("listaJuegos"));
+    const nombreJuego = document.getElementById("nombreJuego");
+    const categoria = document.getElementById("categoria");
+    const descripcion = document.getElementById("descripcion");
+    const codigo = document.getElementById("codigo");
+    const index = juegos.findIndex((c) => c.codigo == codigo.value);
+    console.log(juegos[index]);
+    if (index !== -1){
+        juegos[index].nombreJuego = nombreJuego.value;
+        juegos[index].categoria = categoria.value;
+        juegos[index].descripcion = descripcion.value;
+    }
+    localStorage.setItem("listaJuegos", JSON.stringify(juegos));
+    botonCancelar();
+    cargarLS(); 
+    codigo.readOnly = false;
+}
+
+
+function botonCancelar(){
+    const codigo = document.getElementById("codigo");
+    const formCrearJuego = document.getElementById("formCrearJuego");
+    const botonCancelar = document.getElementById("botonCancelar");
+    const submitModificar = document.getElementById("submitModificar");
+    const submitJuego = document.getElementById("submitJuego");
+    formCrearJuego.reset();
+    codigo.readOnly = false;
+    botonCancelar.style.display = "none";
+    submitModificar.style.display ="none";
+    submitJuego.style.display ="flex";
+}
+
+
+
 function cargarLS() {
     //ver si hay algo en el LS
     const listaJuegos = localStorage.getItem("listaJuegos");
@@ -93,17 +163,20 @@ function cargarLS() {
             <td>${element.categoria}</td>
             <td>${element.descripcion}</td>
             <td><input class="form-check-input" type="checkbox" ${element.publicado ? "checked" : ""} onchange="cambiarPublicado(${index})"</td>
-            <td> <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalEliminarJuego${element.codigo}">Eliminar</button> </td>    
+            <td>
+             <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalEliminarJuego${element.codigo}">Eliminar</button> 
+             <button class="btn btn-success" onclick="modificarJuegoBoton(${element.codigo})">Modificar</button> 
+            </td>   
         </tr>
         <div class="modal fade" id="modalEliminarJuego${element.codigo}" tabindex="-1" aria-labelledby="modalEliminarJuego${element.codigo}Label" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="modalEliminarJuego${element.codigo}Label">Modal title</h1>
+                    <h1 class="modal-title fs-5" id="modalEliminarJuego${element.codigo}Label">Eliminar juego</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <h4>¿Estas seguro que deseas eliminar este juego?</h4>
+                    <h4>¿Estas seguro que deseas eliminar el juego ${element.nombreJuego}?</h4>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
