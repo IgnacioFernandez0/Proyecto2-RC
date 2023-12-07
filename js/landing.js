@@ -223,7 +223,7 @@ const cargarJuegos = () => {
     const juegosActuales = (localStorage.getItem('listaJuegos'))
     const juegosParse = JSON.parse(juegosActuales)
 
-    if(!juegosActuales || juegosParse.length < 30){ //no se que hace el 30
+    if(!juegosActuales || juegosParse.length < 30){ 
         localStorage.setItem('listaJuegos', JSON.stringify(juegos))
         return;
     }
@@ -236,9 +236,9 @@ const verJuego = () => {
 }
 
 const imprimirTarjetasLanding = () => {
-    console.log('holaaa');
     const contenedor = document.getElementById("contenedorJuegosLanding");
-    const juegos = JSON.parse(localStorage.getItem("listaJuegos"));
+    const juegosDB = JSON.parse(localStorage.getItem("listaJuegos"));
+    const juegos = juegosDB.filter( juego => juego.publicado === true)
     juegos.map((juego, index) => {
         contenedor.innerHTML +=
         `

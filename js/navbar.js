@@ -1,4 +1,4 @@
-// Modifica navbar con información de usuario
+
 
 window.addEventListener("load", function () {
   const userLogged = JSON.parse(localStorage.getItem("token"));
@@ -14,7 +14,7 @@ window.addEventListener("load", function () {
       admin.style.display = "block";
     }
   } else {
-    // Si el usuario no está logeado, mostrar el elemento li con el id "noUser"
+    
     noUser.style.display = "block";
     userLog.style.display = "none";
   }

@@ -25,7 +25,7 @@ const imprimirDetallesJuego = (juego) =>{
 const getJuego = () =>{
     const indexJuego = (localStorage.getItem("juegoDetalle"));
 
-    console.log(indexJuego);
+    
     if(!indexJuego){
         window.location.href="../html/index.html";
         return;

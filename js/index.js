@@ -232,7 +232,7 @@ const cargarJuegos = () => {
     const juegosActuales = (localStorage.getItem('listaJuegos'))
     const juegosParse = JSON.parse(juegosActuales)
 
-    console.log(juegosParse);
+    
     if(!juegosActuales || juegosParse.length < 20){
         localStorage.setItem('listaJuegos', JSON.stringify(juegos))
         return;
@@ -241,14 +241,12 @@ const cargarJuegos = () => {
 }
 cargarJuegos()
 
-const user = JSON.parse(localStorage.getItem("token")) || false;     //en el caso de que haya algo dentro del local storage se guarda en login sino es false
+const user = JSON.parse(localStorage.getItem("token")) || false;     
 
-// if(!user){
-//     window.location.href = "inicioSesion.html";
-// }
+
 
 const verJuego = (index) => {
-    console.log(index)
+    
     localStorage.setItem("juegoDetalle", index); 
     window.location.href="detalle.html";
 }
@@ -256,7 +254,7 @@ const verJuego = (index) => {
 const imprimirTarjetasAccion = () => {
     const contenedor = document.getElementById("contenedorCardsAccion");
     const juegos = JSON.parse(localStorage.getItem("listaJuegos"));
-    const juegosAccion = juegos.filter(juego => juego.categoria === 'Accion');
+    const juegosAccion = juegos.filter(juego => juego.publicado === true && juego.categoria === 'Accion');
     juegosAccion.map((juego, index) => {
         const indexJuego = juegos.findIndex(juegoDB => juegoDB === juego)
         contenedor.innerHTML +=
@@ -275,7 +273,7 @@ imprimirTarjetasAccion()
 const imprimirTarjetasDeportes = () => {
     const contenedor = document.getElementById("contenedorCardsDeportes");
     const juegos = JSON.parse(localStorage.getItem("listaJuegos"));
-    const juegosDeportes = juegos.filter(juego => juego.categoria === 'Deportes');
+    const juegosDeportes = juegos.filter(juego => juego.publicado === true && juego.categoria === 'Deportes');
     juegosDeportes.map((juego, index) => {
         const indexJuego = juegos.findIndex(juegoDB => juegoDB === juego)
         contenedor.innerHTML +=
@@ -294,7 +292,7 @@ imprimirTarjetasDeportes()
 const imprimirTarjetasCarreras = () => {
     const contenedor = document.getElementById("contenedorCardsCarreras");
     const juegos = JSON.parse(localStorage.getItem("listaJuegos"));
-    const juegosCarreras = juegos.filter(juego => juego.categoria === 'Carreras');
+    const juegosCarreras = juegos.filter(juego => juego.publicado === true && juego.categoria === 'Carreras');
     juegosCarreras.map((juego, index) => {
         const indexJuego = juegos.findIndex(juegoDB => juegoDB === juego)
         contenedor.innerHTML +=
@@ -313,7 +311,7 @@ imprimirTarjetasCarreras()
 const imprimirTarjetasEstrategia = () => {
     const contenedor = document.getElementById("contenedorCardsEstrategia");
     const juegos = JSON.parse(localStorage.getItem("listaJuegos"));
-    const juegosEstrategia = juegos.filter(juego => juego.categoria === 'Estrategia');
+    const juegosEstrategia = juegos.filter(juego => juego.publicado === true && juego.categoria === 'Estrategia');
     juegosEstrategia.map((juego, index) => {
         const indexJuego = juegos.findIndex(juegoDB => juegoDB === juego)
         contenedor.innerHTML +=
@@ -333,10 +331,11 @@ const imprimirTarjetasNovedades = () => {
     const contenedor = document.getElementById("contenedorCardsNovedades");
 
     const juegosDB = JSON.parse(localStorage.getItem("listaJuegos"));
+    const juegosPublicados = juegosDB.filter( juego => juego.publicado === true);
     let juegos = [];
 
-    for (let index = juegosDB.length - 1; index >= 0; index--) {
-        juegos.push(juegosDB[index]);
+    for (let index = juegosPublicados.length - 1; index >= 0; index--) {
+        juegos.push(juegosPublicados[index]);
     }
 
     let tamaño
@@ -347,7 +346,7 @@ const imprimirTarjetasNovedades = () => {
     }
 
     for (let index = 0; index < tamaño; index++) {
-        const indexJuego = juegosDB.findIndex(juegoDB => juegoDB === juegos[index])
+        const indexJuego = juegosPublicados.findIndex(juegoDB => juegoDB === juegos[index])
         contenedor.innerHTML +=
         `
         <div class="elemento" onclick="verJuego(${indexJuego})">
@@ -362,7 +361,8 @@ const imprimirTarjetasNovedades = () => {
 imprimirTarjetasNovedades()
 
 const imprimirUltimaNovedades = () => {
-    const juegos = JSON.parse(localStorage.getItem("listaJuegos"));
+    const juegosDB = JSON.parse(localStorage.getItem("listaJuegos"));
+    const juegos = juegosDB.filter( juego => juego.publicado === true)
     const ultimoJuego = juegos[juegos.length - 1];
 
     const nombre = document.getElementById("nombreJuegoNovedades");

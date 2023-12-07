@@ -1,6 +1,21 @@
+const verificarUsuario = () => {
+    const userString = localStorage.getItem('token');
+    if (!user) {
+        window.location.href = '/html/logOut.html'
+    }
+
+    const user = JSON.parse(userString);
+    if (!user || user.rol !== 'admin') {
+        window.location.href = '/html/logOut.html'
+    }
+}
+
+verificarUsuario()
+
 let juegos = [];
 
 const cargarJuegos = () => {
+    verificarUsuario()
     const juegosDB = [
         {
             codigo: 1, 
@@ -235,7 +250,7 @@ const cargarJuegos = () => {
 cargarJuegos()
 
 function nuevoJuego(event){
-     
+    verificarUsuario()
     event.preventDefault();
     const codigo = document.getElementById("codigo");
     const portadaJuego = document.getElementById("portadaJuego").value;
@@ -246,7 +261,7 @@ function nuevoJuego(event){
     const descripcion = document.getElementById("descripcion").value;
     const formCrearJuego = document.getElementById("formCrearJuego");
     
-    //Validaciones al formulario
+    
 
     const codigoExistente = juegos.find(juego => juego.codigo === codigo.value)
     if(codigoExistente){
@@ -298,10 +313,7 @@ function nuevoJuego(event){
    
     
     
-    // document.getElementById("codigo").value;
-    // document.getElementById("nombreJuego").value;
-    // document.getElementById("categoria").value;
-    // document.getElementById("descripcion").value;
+  
     formCrearJuego.reset();
 
     codigo.focus();
@@ -309,13 +321,15 @@ function nuevoJuego(event){
 }
 
 const cambiarPublicado = (index) => {
-    //Debo traer el valor del input y cambairle el valor
+    verificarUsuario()
+    
     juegos[index].publicado = !juegos[index].publicado;
     localStorage.setItem("listaJuegos",JSON.stringify(juegos));
 };
 
 
 function borrarJuego(codigo) {
+    verificarUsuario()
     const juegos = JSON.parse(localStorage.getItem("listaJuegos"));
     const index = juegos.findIndex((c) => c.codigo == codigo);
 
@@ -329,6 +343,7 @@ function borrarJuego(codigo) {
 
 
 function modificarJuegoBoton(codigo){
+    verificarUsuario()
     const juegos = JSON.parse(localStorage.getItem("listaJuegos"));
     const codigoJuego = document.getElementById("codigo");
     codigoJuego.readOnly = true;
@@ -358,7 +373,7 @@ function modificarJuegoBoton(codigo){
 }
 
 function modificarJuego(){
-
+    verificarUsuario()
     const juegos = JSON.parse(localStorage.getItem("listaJuegos"));
 
     const nombreJuego = document.getElementById("nombreJuego");
@@ -424,20 +439,20 @@ function botonCancelar(){
 
 
 function cargarLS() {
-    //ver si hay algo en el LS
+    verificarUsuario()
+    
     const listaJuegos = localStorage.getItem("listaJuegos");
 
     if(listaJuegos){
-        juegos = JSON.parse(listaJuegos); //Si es no null le asigna lo que tiene en el LS y sino seguira siendo un array vacio
+        juegos = JSON.parse(listaJuegos); 
     }else{
         juegos = [];
     }
 
-    //dibujar en la table sus elementos
+    
 
     const tabla = document.getElementById("tablaJuegos");
-    tabla.innerHTML = "";   //Como es un acumulador debo inicializarlo en 0. porque sino se me acumulan los anteriores mas el nuevo
-    //Esto lo hace que se vacie la tabla y despues se vuelva a llenar
+    tabla.innerHTML = "";   
 
     juegos.forEach((element, index) => {
         tabla.innerHTML += `
@@ -470,14 +485,12 @@ function cargarLS() {
             </div>
         </div>
 
-        `; //me permite los saltos de linea
-        //aqui el $ seguido de {} con "codigo" dentro quiero hacer que me diga que elemento con el codigo estoy borrando
-        
+        `; 
     });
 
 }
 
-//invoco la funcion
+
 cargarLS();
 
 
