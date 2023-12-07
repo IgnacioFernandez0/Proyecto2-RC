@@ -52,7 +52,7 @@ footer{
     color: rgb(214, 214, 214);
 }
 
-.destacado a{
+.destacado button{
     background-color:rgb(255, 166, 0);
     padding: 0.5rem;
     font-size: 1rem;
@@ -64,3 +64,109 @@ footer{
     color: rgb(65, 65, 65);
     font-weight: 500;
 }
+
+
+/* carousel */
+
+/*El scroll*/
+
+.media-scroller {
+    display: grid;
+    gap: 20px;
+    grid-auto-flow: column;
+    grid-auto-columns: 40%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+  
+.elemento {
+    display: grid;
+    grid-template-rows: min-content;
+    gap: 5px;
+    background: transparent;
+    position: relative;
+    padding-bottom: 1rem;
+    cursor: pointer;
+}
+  
+.elemento img {
+    inline-size: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.elemento img:hover{
+    opacity: 0.5;
+}
+
+
+.elemento:hover .texto-superpuesto {
+    opacity: 1;
+}
+
+.texto-superpuesto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; 
+    font-size: 30px; 
+    font-weight: 700;
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
+}
+
+.snaps-inline {
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: 1rem;
+}
+  
+.snaps-inline > * {
+    scroll-snap-align: start;
+}
+  
+.contenedorScrollLateral{
+    background-color: rgba(11, 11, 83, 0.7);
+    padding-block: 1rem;
+   
+   
+   
+    overflow-x: auto; /* Enable horizontal scrollbar if needed */
+    white-space: nowrap; /* Prevent line breaks */
+}
+  
+
+/*ESTA SECCION ME MODIFICA EL ESTILO DEL SCROLL*/
+
+::-webkit-scrollbar{
+    background-color: transparent;
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: rgb(138, 138, 235);
+    border-radius: 10px;
+    width: 1px;
+}
+
+::-webkit-scrollbar-corner{
+
+    width: 3px;
+}
+
+::-webkit-scrollbar-track-piece{
+    background-color: transparent;
+}
+
+.seccionCarruselHome{
+    background-color: rgb(31, 31, 31);
+}
+
+.seccionCarruselHome h3{
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    padding: 1.5rem;
+}
+

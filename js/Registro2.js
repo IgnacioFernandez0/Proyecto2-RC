@@ -34,5 +34,5 @@ function manejarFormulario(event){
     localStorage.setItem("listaUsuarios", JSON.stringify(usuarios));
     alert("Registro exitoso");
     //redirecciono al login
-    window.location.href = "inicioSesion.html"
+    window.location.href = "/html/inicioSesion.html"
 }

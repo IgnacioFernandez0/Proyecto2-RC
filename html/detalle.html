@@ -13,12 +13,12 @@
     <nav class="navbar navbar-expand-lg navBarNACHO">
         <div class="container">
            
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="./index.html">
                 <img src="../assets/pacmanNeonAzul.png" class="d-inline-block align-text-top imagenLogoNacho">
             </a>
             
             <div class="navbar-nav navbar-brand me-auto">
-                <a class="nav-link text-white fw-medium" aria-current="page" href="#">
+                <a class="nav-link text-white fw-medium" aria-current="page" href="./index.html">
                     Game Over
                 </a>
             </div>
@@ -35,7 +35,7 @@
                             Tienda
                         </a>
                         <ul class="dropdown-menu bg-black">
-                            <li><a class="dropdown-item text-white fw-medium options" href="../html/error404.html">Destacados</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="../html/index.html">Destacados</a></li>
                             <li><a class="dropdown-item text-white fw-medium options" href="../html/error404.html">Ofertas del dia</a></li>
                             <li><hr class="dropdown-divider bg-primary"></li>
                             <li><a class="dropdown-item text-white fw-medium options" href="../html/error404.html">Mas vendido</a></li>
@@ -81,15 +81,18 @@
                             
                         </a>
                         <ul class="dropdown-menu bg-black">
-                            <li><a class="dropdown-item text-white fw-medium options" href="#">Mi cuenta</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="./error404.html">Mi cuenta</a></li>
                             <li><hr class="dropdown-divider bg-primary"></li>
-                            <li><a class="dropdown-item text-white fw-medium options" id="logOut" href="#">Cerrar Sesion</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" id="logOut" href="./logOut.html">Cerrar Sesion</a></li>
                         </ul>
                     </li>
                 
                 </ul>
                 <div class="navbar-brand">
-                    <img src="../assets/carroDeCompras.png" width="45px" class="d-inline-block align-text-top ms-2" alt="">
+                    
+                    <a href="./error404.html">
+                        <img src="../assets/carroDeCompras.png" width="45px" class="d-inline-block align-text-top ms-2" alt="">
+                    </a>
                 </div>
                 <div class="d-flex" id="noUser">
                     <div class="nav-item">
@@ -114,24 +117,13 @@
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active text-bg-dark" aria-current="true" aria-label="Slide 1"></button>
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="text-bg-dark" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="text-bg-dark"aria-label="Slide 3"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" class="text-bg-dark "aria-label="Slide 4"></button>
                         </div>
                         <div class="carousel-inner bg-white">
-                            <div class="carousel-item active  justify-content-center align-items-center">
-                                <img src="https://sm.ign.com/t/ign_latam/screenshot/default/eivor_zm9y.1280.jpg" class="w-100 d-block" alt="assasins"> 
+                            <div class="carousel-item active">
+                                <img src="../assets/pacmanNeonAzul.png" class="w-100 d-block" id="carouselJuego1" alt="assasins">
                             </div>
-                            <div class="carousel-item ">
-                                <img src="https://cdn.akamai.steamstatic.com/steam/apps/2208920/ss_103481084a59b34837113daf27c04679caf743f3.1920x1080.jpg?t=1697654233" class="d-block w-100" alt="Vista interna de los componentes de PC Ryzen AMD dual core 8GB">
-                            </div>
-                            <div class="carousel-item ">
-                                <img src="https://cdn.akamai.steamstatic.com/steam/apps/2208920/ss_e7310b36689ec722d2ea4643efc15bd8fa720c67.1920x1080.jpg?t=1697654233" class="d-block w-100" alt="Ryzen">
-                            </div>
-                            <div class="carousel-item ">
-                                <img src="https://cdn.akamai.steamstatic.com/steam/apps/2208920/ss_c3bff917ead50268eb7708ef3bf30e07b58929e9.1920x1080.jpg?t=1697654233" class="d-block w-100" alt="Componentes internos Ryzen">
-                            </div>
-                            <div class="carousel-item container text-center">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/VVX7DRyjE60?si=CMRxJ5z3bXdwPZgx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+                            <div class="carousel-item">
+                                <img src="../assets/pacmanNeonAzul.png" id="carouselJuego2" class="d-block w-100" alt="Vista interna de los componentes de PC Ryzen AMD dual core 8GB">
                             </div>
                         </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -151,15 +143,11 @@
                     <div class="row">
                         <div class="col-md-12 col-sm-12 text center">
                             <h2 class="descripcionTitulo fs-2 mt-3 text-center">Descripción del Producto</h2>
-                            <p class="descripcionTitulo mt-3 text-primary fw-bold">¿QUÉ ES ASSASSIN'S CREED VALHALLA?</p>
-                            <h4>Saquea a tus enemigos, desarrolla tu asentamiento y aumenta tu poder político en el próximo capítulo de la serie de Asassin’s Creed.</h4>
+                            <h4 id="descripcionJuego">Saquea a tus enemigos, desarrolla tu asentamiento y aumenta tu poder político en el próximo capítulo de la serie de Asassin’s Creed.</h4>
                             <br>
                             <p class="fw-light fs-6">Etiquetas populares para este producto:</p>
-                            <a href="#" class=" etiqueta" tabindex="-1" role="button" aria-disabled="true">Acción</a>
-                            <a href="#" class=" etiqueta" tabindex="-1" role="button" aria-disabled="true">Mundo Abierto</a>
-                            <a href="#" class=" etiqueta" tabindex="-1" role="button" aria-disabled="true">Rol</a>
-                            <a href="#" class=" etiqueta" tabindex="-1" role="button" aria-disabled="true">Aventura</a>
-                            <a href="#" class=" etiqueta" tabindex="-1" role="button" aria-disabled="true">Vikingos</a>
+                            <a href="./error404.html" class=" etiqueta" id="categoriaJuego" tabindex="-1" role="button" aria-disabled="true">Acción</a>
+                        
                         </div>
                     </div>
                 </div>
@@ -171,16 +159,16 @@
                         <span>+ de 1000 vendidos</span>
                     </div>
                     <div class="d-flex">
-                        <span class="caracteristicaProducto fs-2">Assassin's Creed Valhalla</span>
+                        <span class="caracteristicaProducto fs-2" id="tituloJuego" ></span>
                     </div>
                     <div class="divisiondetalle "></div>
                     <div class="detallePrecio">
-                        <span class="precioReal display-6 text-primary-emphasis "> US$59.99</span>
+                        <span class="precioReal display-6 text-primary-emphasis">US$<span id="precioJuego"></span></span>
                     </div>
                     <div class="divisiondetalle"> </div>
                     <div class="total mt-5">
                         <span class="totalProductos fs-2 text-primary-emphasis">Total de mis productos:</span>
-                        <span class="precioFinal fs-3 ms-1">US$59.99</span>
+                        <span class="precioFinal fs-3 ms-1">US$<span id="precioJuego2"></span></span>
                     </div>
                     <div>
                         <a href="#" data-bs-toggle="modal" data-bs-target="#miModal">Ver métodos de Pago</a>
@@ -238,7 +226,7 @@
     </div>
 
 
-    <div class=" container row ms-5 ">
+    <div class=" container row ms-lg-5 w-100">
     <div class="d-flex col-lg-9">
         <div class="container ms-2 mt-2 mb-5">
             <div id="myCarouselb" class="carousel slide" data-bs-ride="carousel">
@@ -250,7 +238,7 @@
                         <div class="row justify-content-between">
                             <div class="col-2 col-md-3">
                                 <div class="card">
-                                    <a href="#">
+                                    <a href="./error404.html">
                                         <img src="../assets/assasins2.jpeg" class="object-fit-contain" alt="Asassin’s 2">
                                     </a>
                                     <div class="linea"></div>
@@ -260,17 +248,17 @@
                             </div>
                             <div class="col-2 col-md-3">
                                     <div class="card">
-                                        <a href="#">
+                                        <a href="./error404.html">
                                             <img src="../assets/assasins3.jpeg" class="object-fit-contain" alt="Asassin’s 3">
                                         </a>
                                         <div class="linea"></div>
-                                        <h6>Asassin’s Creed® Brotherhood</h6>
+                                        <h6>Asassins Creed® Brotherhood</h6>
                                         <a class="btn mt-4 mb-3 ofertaBoton" href="../html/error404.html" role="button">Ver oferta</a>
                                     </div>
                             </div>
                             <div class="col-2 col-md-3">
                                 <div class="card">
-                                    <a href="#">    
+                                    <a href="./error404.html">    
                                         <img src="https://cdn.k4g.com/files/media/cache/cover_270/cover/5ee3d85c18b206158f700cdd6940208b.jpg" class="object-fit-contain" alt="FIFA 24">
                                     </a>
                                     <div class="linea"></div>
@@ -280,7 +268,7 @@
                             </div>
                             <div class="col-2 col-md-3">
                                 <div class="card">
-                                    <a href="#">
+                                    <a href="./error404.html">
                                         <img src="https://image.api.playstation.com/vulcan/ap/rnd/202305/3114/0338cca6e5031ecf3f83a04b7014e4428bd639a5076df71b.jpg" class="object-fit-contain" alt="Monitor Philips Pc De 27">
                                     </a>
                                     <div class="linea"></div>
@@ -294,7 +282,7 @@
                         <div class="row justify-content-between">
                             <div class="col-2 col-md-3">
                                 <div class="card">
-                                    <a href="#">
+                                    <a href="./error404.html">
                                         <img src="https://image.api.playstation.com/vulcan/ap/rnd/202212/0522/Dzry5RAwU9HsJGXZ3PUSYgCa.jpg" class="object-fit-contain" alt="Intel Dual Core 8gb Led 22">
                                     </a>
                                     <div class="linea"></div>
@@ -304,7 +292,7 @@
                             </div>
                             <div class="col-2 col-md-3">
                                 <div class="card">
-                                    <a href="#">
+                                    <a href="./error404.html">
                                         <img src="https://image.api.playstation.com/vulcan/ap/rnd/202307/2809/03f24f06573f21a2b3b5279b26205b0f882acf8a31d5dabd.png" class="object-fit-contain" alt="Samsung Galaxy S23 128gb">
                                     </a>
                                     <div class="linea"></div>
@@ -314,7 +302,7 @@
                             </div>
                             <div class="col-2 col-md-3">
                                 <div class="card">
-                                    <a href="#">
+                                    <a href="./error404.html">
                                         <img src="https://upload.wikimedia.org/wikipedia/en/b/b0/Madden_NFL_24_Cover.jpeg" class="object-fit-contain" alt="MADDEN24">
                                     </a>
                                     <div class="linea"></div>
@@ -324,7 +312,7 @@
                             </div>
                             <div class="col-2 col-md-3">
                                 <div class="card">
-                                    <a href="#">
+                                    <a href="./error404.html">
                                         <img src="https://image.api.playstation.com/vulcan/ap/rnd/202310/2310/ecdcde51e224725ab2769dc9c79350d5dbd6bca523baa8c2.png" class="object-fit-contain" alt="WRC">
                                     </a>
                                     <div class="linea"></div>
@@ -344,11 +332,11 @@
             <form id="commentForm">
                 <div class="mb-3">
                     <label for="username" class="form-label">Usuario:</label>
-                    <input type="text" class="form-control" id="username" required>
+                    <input type="text" class="form-control" id="username" required maxlength="100">
                 </div>
                 <div class="mb-3">
                     <label for="comment" class="form-label">Comentario:</label>
-                    <textarea class="form-control" id="comment" rows="3" required></textarea>
+                    <textarea class="form-control" id="comment" rows="3" required maxlength="200"></textarea>
                 </div>
                 <button type="button" class="btn btn-primary" onclick="guardarComentario()">Enviar Comentario</button>
             </form>
@@ -420,17 +408,17 @@
                     </ul>
                     <ul class="list-unstyled list-inline">
                         <li class="list-inline-item fs-2">
-                            <a href="#">
+                            <a href="./error.404.html">
                                 <i class="bi bi-facebook px-2 text-white"></i>
                             </a>
                         </li>
                         <li class="list-inline-item fs-2">
-                            <a href="#">
+                            <a href="./error.404.html">
                                 <i class="bi bi-twitter px-2 text-white"></i>
                             </a>
                         </li>
                         <li class="list-inline-item fs-2">
-                            <a href="#">
+                            <a href="./error.404.html">
                                 <i class="bi bi-twitch px-2 text-white"></i>
                             </a>
                         </li>
@@ -448,6 +436,7 @@
         </div>
     </footer>
 
+    <script src="../js/detalle.js"></script>
     <script src="../js/comentario.js"></script>
     <script src="../js/navbar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>

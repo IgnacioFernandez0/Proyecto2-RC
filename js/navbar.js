@@ -15,7 +15,7 @@ window.addEventListener("load", function () {
     }
   } else {
     // Si el usuario no está logeado, mostrar el elemento li con el id "noUser"
-    noUser.style.display = "none";
+    noUser.style.display = "block";
     userLog.style.display = "none";
   }
 });

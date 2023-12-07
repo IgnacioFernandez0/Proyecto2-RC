@@ -223,8 +223,7 @@ const cargarJuegos = () => {
     const juegosActuales = (localStorage.getItem('listaJuegos'))
     const juegosParse = JSON.parse(juegosActuales)
 
-    console.log(juegosParse);
-    if(!juegosActuales || juegosParse.length < 20){
+    if(!juegosActuales || juegosParse.length < 30){ //no se que hace el 30
         localStorage.setItem('listaJuegos', JSON.stringify(juegos))
         return;
     }
@@ -232,27 +231,18 @@ const cargarJuegos = () => {
 }
 cargarJuegos()
 
-const user = JSON.parse(localStorage.getItem("token")) || false;     //en el caso de que haya algo dentro del local storage se guarda en login sino es false
-
-// if(!user){
-//     window.location.href = "inicioSesion.html";
-// }
-
-const verJuego = (index) => {
-    console.log(index)
-    localStorage.setItem("juegoDetalle", index); 
-    window.location.href="detalle.html";
+const verJuego = () => {
+    window.location.href="/html/inicioSesion.html";
 }
 
-const imprimirTarjetasAccion = () => {
-    const contenedor = document.getElementById("contenedorCardsAccion");
+const imprimirTarjetasLanding = () => {
+    console.log('holaaa');
+    const contenedor = document.getElementById("contenedorJuegosLanding");
     const juegos = JSON.parse(localStorage.getItem("listaJuegos"));
-    const juegosAccion = juegos.filter(juego => juego.categoria === 'Accion');
-    juegosAccion.map((juego, index) => {
-        const indexJuego = juegos.findIndex(juegoDB => juegoDB === juego)
+    juegos.map((juego, index) => {
         contenedor.innerHTML +=
         `
-        <div class="elemento" onclick="verJuego(${indexJuego})">
+        <div class="elemento" onclick="verJuego()">
             <img src="${juego.portadaJuego}" alt="${juego.nombreJuego}">                   
             <div class="texto-superpuesto"><span class="text-white">${juego.nombreJuego}</span></div>
         </div>
@@ -261,115 +251,4 @@ const imprimirTarjetasAccion = () => {
     )
 }
 
-imprimirTarjetasAccion()
-
-const imprimirTarjetasDeportes = () => {
-    const contenedor = document.getElementById("contenedorCardsDeportes");
-    const juegos = JSON.parse(localStorage.getItem("listaJuegos"));
-    const juegosDeportes = juegos.filter(juego => juego.categoria === 'Deportes');
-    juegosDeportes.map((juego, index) => {
-        const indexJuego = juegos.findIndex(juegoDB => juegoDB === juego)
-        contenedor.innerHTML +=
-        `
-        <div class="elemento" onclick="verJuego(${indexJuego})">
-            <img src="${juego.portadaJuego}" alt="${juego.nombreJuego}">                   
-            <div class="texto-superpuesto"><span class="text-white">${juego.nombreJuego}</span></div>
-        </div>
-        `
-    }
-    )
-}
-
-imprimirTarjetasDeportes()
-
-const imprimirTarjetasCarreras = () => {
-    const contenedor = document.getElementById("contenedorCardsCarreras");
-    const juegos = JSON.parse(localStorage.getItem("listaJuegos"));
-    const juegosCarreras = juegos.filter(juego => juego.categoria === 'Carreras');
-    juegosCarreras.map((juego, index) => {
-        const indexJuego = juegos.findIndex(juegoDB => juegoDB === juego)
-        contenedor.innerHTML +=
-        `
-        <div class="elemento" onclick="verJuego(${indexJuego})">
-            <img src="${juego.portadaJuego}" alt="${juego.nombreJuego}">                   
-            <div class="texto-superpuesto"><span class="text-white">${juego.nombreJuego}</span></div>
-        </div>
-        `
-    }
-    )
-}
-
-imprimirTarjetasCarreras()
-
-const imprimirTarjetasEstrategia = () => {
-    const contenedor = document.getElementById("contenedorCardsEstrategia");
-    const juegos = JSON.parse(localStorage.getItem("listaJuegos"));
-    const juegosEstrategia = juegos.filter(juego => juego.categoria === 'Estrategia');
-    juegosEstrategia.map((juego, index) => {
-        const indexJuego = juegos.findIndex(juegoDB => juegoDB === juego)
-        contenedor.innerHTML +=
-        `
-        <div class="elemento" onclick="verJuego(${indexJuego})">
-            <img src="${juego.portadaJuego}" alt="${juego.nombreJuego}">                   
-            <div class="texto-superpuesto"><span class="text-white">${juego.nombreJuego}</span></div>
-        </div>
-        `
-    }
-    )
-}
-
-imprimirTarjetasEstrategia()
-
-const imprimirTarjetasNovedades = () => {
-    const contenedor = document.getElementById("contenedorCardsNovedades");
-
-    const juegosDB = JSON.parse(localStorage.getItem("listaJuegos"));
-    let juegos = [];
-
-    for (let index = juegosDB.length - 1; index >= 0; index--) {
-        juegos.push(juegosDB[index]);
-    }
-
-    let tamaño
-    if(juegos.length >= 10){
-        tamaño = 10
-    } else{
-        tamaño = juegos.length
-    }
-
-    for (let index = 0; index < tamaño; index++) {
-        const indexJuego = juegosDB.findIndex(juegoDB => juegoDB === juegos[index])
-        contenedor.innerHTML +=
-        `
-        <div class="elemento" onclick="verJuego(${indexJuego})">
-            <img src="${juegos[index].portadaJuego}" alt="${juegos[index].nombreJuego}">                   
-            <div class="texto-superpuesto"><span class="text-white">${juegos[index].nombreJuego}</span></div>
-        </div>
-        `
-        
-    }
-}
-
-imprimirTarjetasNovedades()
-
-const imprimirUltimaNovedades = () => {
-    const juegos = JSON.parse(localStorage.getItem("listaJuegos"));
-    const ultimoJuego = juegos[juegos.length - 1];
-
-    const nombre = document.getElementById("nombreJuegoNovedades");
-    const descripcion = document.getElementById("descripcionJuegoNovedades");
-    const precio = document.getElementById("precioJuegoNovedades");
-    const portada = document.getElementById("portadaJuegoNovedades");
-    const contenedorBoton = document.getElementById("verMasJuegoNovedades");
-
-    nombre.innerHTML = ultimoJuego.nombreJuego
-    descripcion.innerHTML = ultimoJuego.descripcion
-    precio.innerHTML = ultimoJuego.precioJuego
-    portada.src = ultimoJuego.portadaJuego
-    contenedorBoton.innerHTML =
-    `
-        <button onclick="verJuego(${juegos.length - 1})">Ver más</button>
-    `
-}
-
-imprimirUltimaNovedades()
+imprimirTarjetasLanding()

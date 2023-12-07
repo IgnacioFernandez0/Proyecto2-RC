@@ -112,7 +112,8 @@ footer{
 }
 
 .formInput input{
-    height: 30px;
+    height: 40px;
+    padding-inline: 0.5rem;
     background-color: transparent;
     border: none;
     border-bottom: 3px solid rgb(233, 227, 227);

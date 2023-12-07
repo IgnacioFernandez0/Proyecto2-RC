@@ -17,12 +17,12 @@
     <nav class="navbar navbar-expand-lg navBarNACHO">
         <div class="container">
            
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="./index.html">
                 <img src="../assets/pacmanNeonAzul.png" class="d-inline-block align-text-top imagenLogoNacho">
             </a>
             
             <div class="navbar-nav navbar-brand me-auto">
-                <a class="nav-link text-white fw-medium" aria-current="page" href="#">
+                <a class="nav-link text-white fw-medium" aria-current="page" href="./index.html">
                     Game Over
                 </a>
             </div>
@@ -81,9 +81,9 @@
                             
                         </a>
                         <ul class="dropdown-menu bg-black">
-                            <li><a class="dropdown-item text-white fw-medium options" href="#">Mi cuenta</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="./error404.html">Mi cuenta</a></li>
                             <li><hr class="dropdown-divider bg-primary"></li>
-                            <li><a class="dropdown-item text-white fw-medium options" id="logOut" href="#">Cerrar Sesion</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" id="logOut" href="./logOut.html">Cerrar Sesion</a></li>
                         </ul>
                     </li>
                 
@@ -115,23 +115,21 @@
                         <div class="rowForm">
                             <div class="formInput">
                                 <label for="User">Nombre de usuario</label>
-                                <input type="text" id="User" name="User">
+                                <input type="text" id="User" name="User" maxlength="100">
                             </div>
                         </div>
                         <div class="rowForm">
                             <div class="formInput">
                                 <label for="Pass">Contraseña</label>
-                                <input type="password" id="Pass" name="Pass">   
+                                <input type="password" id="Pass" name="Pass" maxlength="100">   
                             </div>
                         </div>
                         <div class="submitButton">
-                            <a href="#">
-                                <button type="submit">
-                                    Iniciar Sesion
-                                </button>
-                            </a>
+                            <button type="submit">
+                                Iniciar Sesion
+                            </button>
                         </div>
-                        <p class="mt-3">No tienes cuenta? <a href="./Registro.html"> Crar cuenta</a></p>
+                        <p class="mt-3">No tienes cuenta? <a href="./Registro.html"> Crear cuenta</a></p>
                        
 
                     </form>

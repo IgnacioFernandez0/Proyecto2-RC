@@ -96,6 +96,7 @@
     background: transparent;
     position: relative;
     padding-bottom: 1rem;
+    cursor: pointer;
 }
   
 .elemento img {
@@ -159,7 +160,7 @@
 }
 ::-webkit-scrollbar{
     background-color: transparent;
-  
+    width: 6px;
 }
 
 

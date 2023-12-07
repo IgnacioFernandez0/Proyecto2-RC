@@ -5,20 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/carrusel.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <title>Pagina principal</title>
     <script src="../js/navbar.js"></script>
 </head>
 <body>
+
     <nav class="navbar navbar-expand-lg navBarNACHO">
         <div class="container">
            
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="./index.html">
                 <img src="../assets/pacmanNeonAzul.png" class="d-inline-block align-text-top imagenLogoNacho">
             </a>
             
             <div class="navbar-nav navbar-brand me-auto">
-                <a class="nav-link text-white fw-medium" aria-current="page" href="#">
+                <a class="nav-link text-white fw-medium" aria-current="page" href="../html/index.html">
                     Game Over
                 </a>
             </div>
@@ -35,7 +37,7 @@
                             Tienda
                         </a>
                         <ul class="dropdown-menu bg-black">
-                            <li><a class="dropdown-item text-white fw-medium options" href="../html/error404.html">Destacados</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="../html/index.html">Destacados</a></li>
                             <li><a class="dropdown-item text-white fw-medium options" href="../html/error404.html">Ofertas del dia</a></li>
                             <li><hr class="dropdown-divider bg-primary"></li>
                             <li><a class="dropdown-item text-white fw-medium options" href="../html/error404.html">Mas vendido</a></li>
@@ -81,13 +83,18 @@
                         <ul class="dropdown-menu bg-black">
                             <li><a class="dropdown-item text-white fw-medium options" href="../html/error404.html">Mi cuenta</a></li>
                             <li><hr class="dropdown-divider bg-primary"></li>
-                            <li><a class="dropdown-item text-white fw-medium options" id="logOut" href="#">Cerrar Sesion</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" id="logOut" href="./logOut.html">Cerrar Sesion</a></li>
                         </ul>
                     </li>
                 
                 </ul>
                 <div class="navbar-brand">
-                    <img src="../assets/carroDeCompras.png" width="45px" class="d-inline-block align-text-top ms-2" alt="">
+                    <a href="./error404.html">
+                        
+                    <a href="./error404.html">
+                        <img src="../assets/carroDeCompras.png" width="45px" class="d-inline-block align-text-top ms-2" alt="">
+                    </a>
+                    </a>
                 </div>
                 <div class="d-flex" id="noUser">
                     <div class="nav-item">
@@ -104,29 +111,80 @@
             </div>
         </div>
     </nav>
-
-    <div class="destacado p-3 border border-primary border-start-0 rounded-end">
-        <div class="row">
-            <div class="container col-md-6 col-sm-12 text-center">
-                <h2 class="rolling">DESTACADO DEL MES!!! </h2>
-                <h4>¡ASSASIN´S CREED VALHALLA YA ESTÁ AQUÍ!</h4>
-                <p class="lead ">Assassin’s Creed Valhalla es la nueva entrega de Assassin’s Creed de Ubisoft, la saga de acción y aventuras en mundo abierto</p>
-                <p class="lead ">seguir incorporando características y actualizaciones durante muchos años.</p>
-                <p class="lead ">más famosa de la desarrolladora de videojuegos.</p>
-                <p class="lead ">En esta ocasión, y siguiendo con los toques RPG de las últimas entregas,</p>
-                <p class="lead ">viajaremos al siglo IX después de Cristo, llegando a una Gran Bretaña invadida por vikingos.</p>
-                <div class="text-center">               
-                    <a href="../html/detalle.html">Ver más</a>
-                </div>
-            </div>
-            <div class="container col-md-6 col-sm-12 d-flex align-content-center justify-content-center">
-                <img class="object-fit-contain w-75" src="../assets/dest.jpg" alt="cs2">
-            </div>
+    <section>
+      <div class="destacado p-3 border border-primary border-start-0 rounded-end">
+          <div class="row align-items-center">
+              <div class="container col-md-6 col-sm-12 text-center">
+                  <h2 class="rolling">NOVEDAD DEL MES!</h2>
+                  <h4>¡<span id="nombreJuegoNovedades"></span> YA ESTÁ AQUÍ!</h4>
+                  <p class="lead" id="descripcionJuegoNovedades"></p>
+                  <p class="lead">U$D<span id="precioJuegoNovedades"></span></p>
+                  <div class="text-center" id="verMasJuegoNovedades">
+                    
+                  </div>
+              </div>
+              <div class="container col-md-6 col-sm-12 d-flex align-content-center justify-content-center">
+                  <img class="object-fit-contain w-75" id="portadaJuegoNovedades" src="../assets/dest.jpg" alt="cs2">
+              </div>
+          </div>
+      </div>
+    </section>
+    <section class="seccionCarruselHome">
+      <div>
+        <h3>Novedades</h3>
+      </div>
+      <div class="w-100 contenedorScrollLateral">
+        <div class="container-fluid ">
+          <div class="media-scroller snaps-inline" id="contenedorCardsNovedades">
+          </div>
         </div>
-    </div>
-
-
-
+      </div>
+    </section>
+    <section class="seccionCarruselHome">
+      <div>
+        <h3>Accion</h3>
+      </div>
+      <div class="w-100 contenedorScrollLateral">
+        <div class="container-fluid ">
+          <div class="media-scroller snaps-inline" id="contenedorCardsAccion">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="seccionCarruselHome">
+      <div>
+        <h3>Deportes</h3>
+      </div>
+      <div class="w-100 contenedorScrollLateral">
+        <div class="container-fluid ">
+          <div class="media-scroller snaps-inline" id="contenedorCardsDeportes">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="seccionCarruselHome">
+      <div>
+        <h3>Carreras</h3>
+      </div>
+      <div class="w-100 contenedorScrollLateral">
+        <div class="container-fluid ">
+          <div class="media-scroller snaps-inline" id="contenedorCardsCarreras">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="seccionCarruselHome">
+      <div>
+        <h3>Estrategia</h3>
+      </div>
+      <div class="w-100 contenedorScrollLateral">
+        <div class="container-fluid ">
+          <div class="media-scroller snaps-inline" id="contenedorCardsEstrategia">
+          </div>
+        </div>
+      </div>
+    </section>
+      
 
     <!--Aqui arranca el footer-->
     <footer class="pt-5">
@@ -223,6 +281,7 @@
 
      
     <script src="../js/index.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

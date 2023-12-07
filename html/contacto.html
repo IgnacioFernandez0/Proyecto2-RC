@@ -13,12 +13,12 @@
     <nav class="navbar navbar-expand-lg navBarNACHO">
         <div class="container">
            
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="./index.html">
                 <img src="../assets/pacmanNeonAzul.png" class="d-inline-block align-text-top imagenLogoNacho">
             </a>
             
             <div class="navbar-nav navbar-brand me-auto">
-                <a class="nav-link text-white fw-medium" aria-current="page" href="#">
+                <a class="nav-link text-white fw-medium" aria-current="page" href="./index.html">
                     Game Over
                 </a>
             </div>
@@ -81,15 +81,18 @@
                             
                         </a>
                         <ul class="dropdown-menu bg-black">
-                            <li><a class="dropdown-item text-white fw-medium options" href="#">Mi cuenta</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" href="./error404.html">Mi cuenta</a></li>
                             <li><hr class="dropdown-divider bg-primary"></li>
-                            <li><a class="dropdown-item text-white fw-medium options" id="logOut" href="#">Cerrar Sesion</a></li>
+                            <li><a class="dropdown-item text-white fw-medium options" id="logOut" href="./logOut.html">Cerrar Sesion</a></li>
                         </ul>
                     </li>
                 
                 </ul>
                 <div class="navbar-brand">
-                    <img src="../assets/carroDeCompras.png" width="45px" class="d-inline-block align-text-top ms-2" alt="">
+                    
+                    <a href="./error404.html">
+                        <img src="../assets/carroDeCompras.png" width="45px" class="d-inline-block align-text-top ms-2" alt="">
+                    </a>
                 </div>
                 <div class="d-flex" id="noUser">
                     <div class="nav-item">
@@ -114,11 +117,11 @@
             <form id="commentForm">
                 <div class="mb-3">
                     <label for="username" class="form-label text-white">Usuario:</label>
-                    <input type="text" class="form-control" id="username" required>
+                    <input type="text" class="form-control" id="username" required maxlength="100">
                 </div>
                 <div class="mb-3">
                     <label for="comment" class="form-label text-white">Comentario:</label>
-                    <textarea class="form-control" id="comment" rows="3" required></textarea>
+                    <textarea class="form-control" id="comment" rows="3" required maxlength="200"></textarea>
                 </div>
                 <button type="button" class="btn btn-primary" onclick="guardarComentario()">Enviar Comentario</button>
             </form>
@@ -192,17 +195,17 @@
                 </ul>
                 <ul class="list-unstyled list-inline">
                     <li class="list-inline-item fs-2">
-                        <a href="#">
+                        <a href="./error.404.html">
                             <i class="bi bi-facebook px-2 text-white"></i>
                         </a>
                     </li>
                     <li class="list-inline-item fs-2">
-                        <a href="#">
+                        <a href="./error.404.html">
                             <i class="bi bi-twitter px-2 text-white"></i>
                         </a>
                     </li>
                     <li class="list-inline-item fs-2">
-                        <a href="#">
+                        <a href="./error.404.html">
                             <i class="bi bi-twitch px-2 text-white"></i>
                         </a>
                     </li>
