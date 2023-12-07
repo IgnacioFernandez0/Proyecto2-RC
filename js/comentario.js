@@ -2,7 +2,7 @@ function guardarComentario() {
     const indexJuego = (localStorage.getItem("juegoDetalle"));
 
     if(!indexJuego){
-        window.location.href="index.html";
+        window.location.href="../html/index.html";
         return;
     }
     
@@ -30,7 +30,7 @@ function guardarComentario() {
     const indexJuego = (localStorage.getItem("juegoDetalle"));
 
     if(!indexJuego){
-        window.location.href="index.html";
+        window.location.href="../html/index.html";
         return;
     }
     

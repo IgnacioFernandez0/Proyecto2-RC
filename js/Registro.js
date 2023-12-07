@@ -1,6 +1,6 @@
 const userLogueado = localStorage.getItem("token");
 if(userLogueado){
-    window.location.href="/html/index.html"
+    window.location.href="../html/index.html"
 }
 
 function crearUsuarioForm(event){
@@ -54,5 +54,5 @@ function crearUsuarioForm(event){
 
     alert("Registro exitoso");
 
-    window.location.href = "/html/index.html"
+    window.location.href = "../html/index.html"
 }

@@ -27,7 +27,7 @@ const getJuego = () =>{
 
     console.log(indexJuego);
     if(!indexJuego){
-        window.location.href="index.html";
+        window.location.href="../html/index.html";
         return;
     }
     const juegos = JSON.parse(localStorage.getItem("listaJuegos"));

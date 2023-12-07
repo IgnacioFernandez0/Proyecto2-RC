@@ -36,7 +36,7 @@ function loginFormulario(e){
     }else{
         alert("Bienvenido ", validUser.nombre);
         localStorage.setItem("token", JSON.stringify(validUser));   //Para saber si hay algun usuario logeuado dentro de la app
-        window.location.href = "index.html";
+        window.location.href = "../html/index.html";
     }
 
 }
