@@ -1,2 +1,2 @@
 localStorage.removeItem('token');
-window.location.href = '/html/landingPage.html'
+window.location.href = '../landingPage.html'

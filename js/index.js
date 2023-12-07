@@ -1,3 +1,12 @@
+const verificarUsuario = () => {
+    const user = localStorage.getItem('token');
+    if (!user) {
+        window.location.href = '/html/logOut.html'
+    }
+}
+
+verificarUsuario()
+
 const cargarJuegos = () => {
     const juegos = [
         {
