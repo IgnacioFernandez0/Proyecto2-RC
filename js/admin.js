@@ -1,6 +1,6 @@
 const verificarUsuario = () => {
     const userString = localStorage.getItem('token');
-    if (!user) {
+    if (!userString) {
         window.location.href = '/html/logOut.html'
     }
 

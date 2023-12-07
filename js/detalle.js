@@ -5,6 +5,7 @@ const imprimirDetallesJuego = (juego) =>{
         return;
     }
 
+    const titleJuego = document.getElementById("titleJuego");
     const carouselJuego1 = document.getElementById("carouselJuego1");
     const carouselJuego2 = document.getElementById("carouselJuego2");
     const descripcionJuego = document.getElementById("descripcionJuego");
@@ -15,6 +16,7 @@ const imprimirDetallesJuego = (juego) =>{
 
     carouselJuego1.src=juego.portadaJuego;
     carouselJuego2.src=juego.portadaJuego2;
+    titleJuego.innerHTML= juego.nombreJuego;
     descripcionJuego.innerHTML= juego.descripcion;
     categoriaJuego.innerHTML=juego.categoria;
     tituloJuego.innerHTML=juego.nombreJuego;
@@ -24,7 +26,6 @@ const imprimirDetallesJuego = (juego) =>{
 
 const getJuego = () =>{
     const indexJuego = (localStorage.getItem("juegoDetalle"));
-
     
     if(!indexJuego){
         window.location.href="../html/index.html";
